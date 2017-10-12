@@ -17,7 +17,7 @@ class CreateSuppliesTable extends Migration
             $table->increments('id');
             $table->string('Nombre',100);
             $table->integer('Cantidad');
-            $table->Decimal('Precio',5,2);
+            $table->decimal('Precio',5,2);
             $table->text('Detalle');
             $table->timestamps();
         });
