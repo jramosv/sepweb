@@ -15,10 +15,10 @@ class CreateTransactionDetailsTable extends Migration
     {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('Nit');
-            $table->string('Nombre',100);
-            $table->integer('Telefono');
-            $table->text('Direccion');
+            $table->integer('nit');
+            $table->string('nombre',100);
+            $table->integer('telefono');
+            $table->text('direccion');
             $table->timestamps();
         });
     }

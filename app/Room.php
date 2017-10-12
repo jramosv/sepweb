@@ -8,10 +8,10 @@ class Room extends Model
 {
     protected $primaryKey = 'id';
     
-        protected $fillable =['Nombre','Camas','Room_id'];
+        protected $fillable =['nombre','camas','room_id'];
     
         public function Hospitalizations()
         {        
-            return $this->hasMany('App\Hospitalization','Room_id', 'id');   
+            return $this->hasMany('App\Hospitalization','room_id', 'id');   
         }
 }

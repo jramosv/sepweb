@@ -8,21 +8,21 @@ class Hospitalization extends Model
 {
     protected $primaryKey = 'id';
     
-        protected $fillable =['Egreso','Ingreso','Room_id','Procedure_id','Nurse_id','Patient_id'];
+        protected $fillable =['egreso','ingreso','room_id','procedure_id','nurse_id','patient_id'];
         
         public function Room()
         {        
-            return $this->hasOne('App\Room', 'Room_id'); 
+            return $this->belongsTo('App\Room'); 
         }
 
         public function Procedure()
         {        
-            return $this->hasOne('App\Procedure', 'Procedure_id'); 
+            return $this->belongsTo('App\Procedure'); 
         }
 
         public function Nurse()
         {        
-            return $this->hasOne('App\Nurse', 'Nurse_id'); 
+            return $this->belongsTo('App\Nurse'); 
         }
     
         public function Patient()

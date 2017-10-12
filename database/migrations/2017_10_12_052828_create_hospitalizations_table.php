@@ -15,16 +15,16 @@ class CreateHospitalizationsTable extends Migration
     {
         Schema::create('hospitalizations', function (Blueprint $table) {
             $table->increments('id');
-            $table->dateTime('Egreso');
-            $table->dateTime('Ingreso');
-            $table->integer('Room_id')->unsigned();
-            $table->foreign('Room_id')->references('id')->on('rooms');
-            $table->integer('Procedure_id')->unsigned();
-            $table->foreign('Procedure_id')->references('id')->on('procedures');
-            $table->integer('Nurse_id')->unsigned();
-            $table->foreign('Nurse_id')->references('id')->on('nurses');
-            $table->integer('Patient_id')->unsigned();
-            $table->foreign('Patient_id')->references('id')->on('patients');
+            $table->dateTime('egreso');
+            $table->dateTime('ingreso');
+            $table->integer('room_id')->unsigned();
+            $table->foreign('room_id')->references('id')->on('rooms');
+            $table->integer('procedure_id')->unsigned();
+            $table->foreign('procedure_id')->references('id')->on('procedures');
+            $table->integer('nurse_id')->unsigned();
+            $table->foreign('nurse_id')->references('id')->on('nurses');
+            $table->integer('patient_id')->unsigned();
+            $table->foreign('patient_id')->references('id')->on('patients');
             $table->timestamps();
         });
     }

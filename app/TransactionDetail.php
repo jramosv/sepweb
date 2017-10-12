@@ -8,11 +8,11 @@ class TransactionDetail extends Model
 {
     protected $primaryKey = 'id';
     
-        protected $fillable =['Nit','Nombre','Telefono','Direccion','Detail_id'];
+        protected $fillable =['nit','nombre','telefono','direccion','detail_id'];
     
         public function Transactions()
         {        
-            return $this->hasMany('App\Transaction','Detail_id', 'id');   
+            return $this->hasMany('App\Transaction','detail_id', 'id');   
         }
     
 }

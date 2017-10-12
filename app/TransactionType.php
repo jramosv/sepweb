@@ -8,10 +8,10 @@ class TransactionType extends Model
 {
     protected $primaryKey = 'id';
     
-        protected $fillable =['Nombre','Type_id'];
+        protected $fillable =['nombre','type_id'];
     
         public function Transactions()
         {        
-            return $this->hasMany('App\Transaction','Type_id', 'id');   
+            return $this->hasMany('App\Transaction','type_id', 'id');   
         }
 }

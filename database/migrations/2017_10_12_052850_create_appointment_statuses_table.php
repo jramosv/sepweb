@@ -15,6 +15,7 @@ class CreateAppointmentStatusesTable extends Migration
     {
         Schema::create('appointment_statuses', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre_estado');
             $table->timestamps();
         });
     }

@@ -15,10 +15,10 @@ class CreateNursesTable extends Migration
     {
         Schema::create('nurses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Nombre',100);
-            $table->string('Apellido',100);
-            $table->integer('Telefono');
-            $table->text('Direccion');
+            $table->string('nombre',100);
+            $table->string('apellido',100);
+            $table->integer('telefono');
+            $table->text('direccion');
             $table->timestamps();
         });
     }

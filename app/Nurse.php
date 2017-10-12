@@ -8,11 +8,11 @@ class Nurse extends Model
 {
     protected $primaryKey = 'id';
     
-        protected $fillable =['Nombre','Apellido','Telefono','Direccion','Nurse_id'];
+        protected $fillable =['nombre','apellido','telefono','direccion'];
     
         public function Hospitalizations()
         {        
-            return $this->hasMany('App\Hospitalization','Nurse_id', 'id');   
+            return $this->hasMany('App\Hospitalization','nurse_id', 'id');   
         }
     
 }

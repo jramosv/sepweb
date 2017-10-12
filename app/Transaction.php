@@ -8,20 +8,20 @@ class Transaction extends Model
 {
     protected $primaryKey = 'id';
     
-        protected $fillable =['Cantidad','Fecha','Type_id','Detail_id','Supply_id'];
+        protected $fillable =['cantidad','fecha','type_id','detail_id','supply_id'];
 
         public function Type()
         {        
-            return $this->hasOne('App\TransactionType', 'Type_id'); 
+            return $this->hasOne('App\TransactionType', 'type_id'); 
         }
 
         public function Detail()
         {        
-            return $this->hasOne('App\TransactionDetail', 'Detail_id'); 
+            return $this->hasOne('App\TransactionDetail', 'detail_id'); 
         }
 
         public function Supply()
         {        
-            return $this->hasOne('App\Supply', 'Supply_id'); 
+            return $this->hasOne('App\Supply', 'supply_id'); 
         }
 }

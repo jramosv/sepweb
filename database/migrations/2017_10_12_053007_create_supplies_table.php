@@ -15,10 +15,10 @@ class CreateSuppliesTable extends Migration
     {
         Schema::create('supplies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Nombre',100);
-            $table->integer('Cantidad');
-            $table->Decimal('Precio',5,2);
-            $table->text('Detalle');
+            $table->string('nombre',100);
+            $table->integer('cantidad');
+            $table->Decimal('precio',5,2);
+            $table->text('detalle');
             $table->timestamps();
         });
     }

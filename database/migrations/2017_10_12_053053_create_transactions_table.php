@@ -15,14 +15,14 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('Cantidad');
-            $table->dateTime('Fecha');
-            $table->integer('Type_id')->unsigned();
-            $table->foreign('Type_id')->references('id')->on('transaction_types');
-            $table->integer('Detail_id')->unsigned();
-            $table->foreign('Detail_id')->references('id')->on('transaction_details');
-            $table->integer('Supply_id')->unsigned();
-            $table->foreign('Supply_id')->references('id')->on('supplies');
+            $table->integer('cantidad');
+            $table->dateTime('fecha');
+            $table->integer('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('transaction_types');
+            $table->integer('detail_id')->unsigned();
+            $table->foreign('detail_id')->references('id')->on('transaction_details');
+            $table->integer('supply_id')->unsigned();
+            $table->foreign('supply_id')->references('id')->on('supplies');
             $table->timestamps();
         });
     }
