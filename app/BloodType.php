@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class BloodType extends Model
 {
-    protected $fillable = ['tipo_sangre'];
+    protected $fillable = ['type'];
 
 
-public function paciente()
+public function pacientes()
 {
-    return $this->hasMany('App\Patient','tipo_sangre','id');
+    return $this->hasMany('App\Patient', 'blood_types_id', 'id');
 }}

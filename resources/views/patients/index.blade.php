@@ -1,0 +1,31 @@
+@extends('layout.admin.admin')
+
+@section('contenido')
+	<h2><small>Pacientes</small></h2>
+	<table class="table table-hover table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Nombre de paciente</th>
+				<th>Naciemiento</th>
+				<th>Sexo</th>
+				<th>Email</th>
+				<th>Tipo Sangre</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach($patients as $patient)
+				<tr>
+					<td width="20px">{{ $patient->id }}</td>
+					<td>{{ $patient->first_name . ' ' . $patient->last_name }}</td>
+					<td>{{ $patient->date_birth }}</td>
+					<td>{{ $patient->sex }}</td>
+					<td>{{ $patient->email }}</td>
+					<td>{{ $patient->tiposangre->type }}</td>
+					<td width="170px"> <a href="#" class="btn btn-primary btn-xs">Ver...</a> <a href="#" class="btn btn-warning btn-xs">Editar</a> <a href="#" class="btn btn-danger btn-xs">Eliminar</a></td>
+				</tr>
+			@endforeach
+		</tbody>
+	</table>
+@endsection

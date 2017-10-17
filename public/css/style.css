@@ -1,0 +1,7 @@
+div.content > div.container-fluid > h2 {
+	margin-top: .5vh;
+}
+
+div.content {
+	padding: 5px;
+}

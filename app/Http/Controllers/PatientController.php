@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Patient;
+use App\BloodType;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
@@ -14,6 +15,11 @@ class PatientController extends Controller
      */
     public function index()
     {
+
+        $tipos_sangre = BloodType::all();
+        $patients = Patient::all();
+        return view('patients.index', compact('tipos_sangre', 'patients'));
+
         //
     }
 
@@ -24,7 +30,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        //
+        return view('patients.create');
     }
 
     /**

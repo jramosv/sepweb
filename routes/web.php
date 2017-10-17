@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('layout.admin.admin');
 });
+
+Route::get('/pacientes', 'PatientController@index');
+
+Route::get('/crear', 'PatientController@create');
+
+Route::get('/morros', function(){
+	return "Morros";
+});

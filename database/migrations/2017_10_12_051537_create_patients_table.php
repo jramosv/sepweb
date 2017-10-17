@@ -15,13 +15,13 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',50);
-            $table->string('apellido',50);
-            $table->date('fecha_nacimiento');
-            $table->enum('sexo', ['Masculino', 'Femenino']);
-            $table->string('correo',50);
-            $table->integer('tipo_sangre')->unsigned();
-            $table->foreign('tipo_sangre')->references('id')->on("blood_types");
+            $table->string('first_name',50);
+            $table->string('last_name',50);
+            $table->date('date_birth');
+            $table->enum('sex', ['Masculino', 'Femenino']);
+            $table->string('email',50);
+            $table->integer('blood_types_id')->unsigned();
+            $table->foreign('blood_types_id')->references('id')->on("blood_types");
             $table->timestamps();
         });
     }
