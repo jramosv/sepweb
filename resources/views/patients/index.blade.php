@@ -1,7 +1,7 @@
 @extends('layout.admin.admin')
 
 @section('contenido')
-	<h2><small>Pacientes</small></h2>
+	<h2 style="display: inline-block;"><small>Pacientes</small></h2><a href="#" class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#create_patient">Nuevo paciente</a>
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 			<tr>
@@ -23,9 +23,10 @@
 					<td>{{ $patient->sex }}</td>
 					<td>{{ $patient->email }}</td>
 					<td>{{ $patient->tiposangre->type }}</td>
-					<td width="170px"> <a href="#" class="btn btn-primary btn-xs">Ver...</a> <a href="#" class="btn btn-warning btn-xs">Editar</a> <a href="#" class="btn btn-danger btn-xs">Eliminar</a></td>
+					<td width="180px"> <a href="#" class="btn btn-primary btn-xs">Ver...</a> <a href="#" class="btn btn-warning btn-xs">Editar</a> <a href="#" class="btn btn-danger btn-xs">Eliminar</a></td>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
+	@include('patients.modals.create')
 @endsection
