@@ -16,49 +16,49 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="/">
                         <i class="pe-7s-graph"></i>
                         <p>Inicio</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="/pacientes">
                         <i class="pe-7s-user"></i>
                         <p>Pacientes</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="/citas">
                         <i class="pe-7s-note2"></i>
                         <p>Citas</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="/doctores">
                         <i class="pe-7s-news-paper"></i>
                         <p>Doctores</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
+                    <a href="/historial">
                         <i class="pe-7s-science"></i>
                         <p>Historial</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="/habitaciones">
                         <i class="pe-7s-map-marker"></i>
                         <p>Habitaciones</p>
                     </a>
                 </li>
                 <li>
-                    <a href="notifications.html">
+                    <a href="/farmacia">
                         <i class="pe-7s-bell"></i>
                         <p>Farmacia</p>
                     </a>
                 </li>
 				<li class="active-pro">
-                    <a href="upgrade.html">
+                    <a href="/administracion">
                         <i class="pe-7s-rocket"></i>
                         <p>Administración</p>
                     </a>
