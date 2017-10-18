@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Supply;
+use App\Http\Requests\SupliesFormRequest;
 
 class SuppliesController extends Controller
 {
@@ -34,7 +35,7 @@ class SuppliesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SupliesFormRequest $request)
     {
         $supply = new Supply();
         $supply->name = $request->name;
