@@ -12,6 +12,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          $this->call(blood_typesTableSeeder::class);
-         $this->call(transactionTypesTableSeeder::class);
+         
     }
 }

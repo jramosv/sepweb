@@ -41,7 +41,17 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $patient = new Patient();
+        $patient->first_name = $request->first_name;
+        $patient->last_name = $request->last_name;
+        $patient->date_birth = $request->date_birth;
+        $patient->sex = $request->sex;
+        $patient->email = $request->email;
+        $patient->blood_types_id = $request->blood_types_id;
+        $patient->save();
+
+        //return redirect(url('/pacientes'))->with('satisfactorio', "El paciente $patient->first_name, $patient->last_name se creo correctamente");
+        return redirect('/pacientes')->with('status', 'El paciente se creo correctamente!');
     }
 
     /**
