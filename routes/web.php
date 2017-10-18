@@ -20,3 +20,10 @@ Route::get('/pacientes/crear', 'PatientController@create');
 Route::post('/pacientes', 'PatientController@store');
 Route::get('/pacientes/{paciente}', 'PatientController@edit');
 Route::put('/pacientes', 'PatientController@update');
+
+Route::get('/transacciones', 'TransactionsController@index');
+
+Route::get('/detalletransacciones', 'TransactionDetailsController@index');
+Route::get('/detalletransacciones/crear', 'TransactionDetailsController@create');
+Route::post('/detalletransacciones', 'TransactionDetailsController@store');
+

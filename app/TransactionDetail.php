@@ -8,7 +8,7 @@ class TransactionDetail extends Model
 {
     protected $primaryKey = 'id';
     
-        protected $fillable =['nit','name','phone','address','detail_id'];
+        protected $fillable =['nit','name','phone','address'];
     
         public function Transactions()
         {        

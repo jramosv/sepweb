@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\TransactionDetail;
 class TransactionDetailsController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class TransactionDetailsController extends Controller
      */
     public function index()
     {
-        //
+        $transaction_details = TransactionDetail::all();
+        return view('transaction_details.index', compact('transaction_details'));
     }
 
     /**
@@ -23,7 +24,7 @@ class TransactionDetailsController extends Controller
      */
     public function create()
     {
-        //
+        return view('transaction_details.create');
     }
 
     /**
