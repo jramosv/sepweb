@@ -1,5 +1,4 @@
 @extends('layout.admin.admin')
-<<<<<<< HEAD
 @section('titulo', 'Pacientes')
 @section('contenido')
 @if (session('status'))
@@ -8,11 +7,6 @@
     </div>
 @endif
 	<h2 style="display: inline-block;"><small>Pacientes</small></h2><a href="/pacientes/crear" class="btn btn-success btn-sm pull-right" >Nuevo paciente</a>
-=======
->>>>>>> 463c9cf6a98d686da8acc294277633e3638f6e99
-
-@section('contenido')
-	<h2 style="display: inline-block;"><small>Pacientes</small></h2><a href="#" class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#create_patient">Nuevo paciente</a>
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 			<tr>
