@@ -1,5 +1,5 @@
 <form method="POST" action="/pacientes">
-<div class="modal fade" id="create_patient" role="dialog">
+<div class="modal fade" tabindex="-1" id="create_patient" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">

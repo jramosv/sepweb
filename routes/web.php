@@ -17,8 +17,5 @@ Route::get('/', function () {
 
 Route::get('/pacientes', 'PatientController@index');
 
-Route::get('/crear', 'PatientController@create');
-
-Route::get('/morros', function(){
-	return "Morros";
-});
+Route::get('/pacientes/crear', 'PatientController@create');
+Route::post('/pacientes', 'PatientController@store');
