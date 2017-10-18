@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TransactionDetail;
+use App\Http\Requests\TransactionDetailsFormRequest;
 class TransactionDetailsController extends Controller
 {
     /**
@@ -33,10 +34,17 @@ class TransactionDetailsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TransactionDetailsFormRequest $request)
     {
-        //
+        $transaction_detail = new TransactionDetail();
+        $transaction_detail->nit = $request->nit;
+        $transaction_detail->name = $request->name;
+        $transaction_detail->phone = $request->phone;
+        $transaction_detail->address = $request->address;
+        $transaction_detail->save();
+        return redirect('/detalletransacciones')->with('status', 'El paciente se creo correctamente!');
     }
+    
 
     /**
      * Display the specified resource.
