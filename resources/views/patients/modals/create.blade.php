@@ -39,28 +39,30 @@
 					@endif
 				</div>
 
-				<div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
-					<label for="date_birth">Sexo </label>
-					<label class="radio-inline"><input type="radio" name="sex" value="{{ old('sex') }}" >Masculino</label>
-					<label class="radio-inline"><input type="radio" name="sex" value="{{ old('sex') }}" >Femenino</label>
-					@if( $errors->has('sex'))
-						<span class="help-block">
-							<strong>{{ $errors->first('sex') }}</strong>
-						</span>
-					@endif
-				</div>
+		<div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
+			<label for="sex">Sexo </label>
+			<br />
+				<label for="sex"><input type="radio" name="sex" value="Masculino" > Masculino</label>
+				<br />
+				<label for="sex"><input type="radio" name="sex" value="Femenino" > Femenino</label>
+			@if( $errors->has('sex'))
+				<span class="help-block">
+					<strong>{{ $errors->first('sex') }}</strong>
+				</span>
+			@endif
+		</div> 
 
-				<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-					<label for="email">Correo electronico</label>
-					<input type="email" name="email" class="form-control" value="{{ old('email') }}" />
-					@if( $errors->has('email'))
-						<span class="help-block">
-							<strong>{{ $errors->first('email') }}</strong>
-						</span>
-					@endif
-				</div>
+		<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+			<label for="email">Correo electronico</label>
+			<input type="email" name="email" class="form-control" placeholder="tucorreo@tuempresa.com" value="{{ old('email') }}" />
+			@if( $errors->has('email'))
+				<span class="help-block">
+					<strong>{{ $errors->first('email') }}</strong>
+				</span>
+			@endif
+		</div>
 
-				<div class="form-group {{ $errors->has('blood_types_id') ? 'has-error' : '' }}">
+		<div class="form-group {{ $errors->has('blood_types_id') ? 'has-error' : '' }}">
 					<label for="blood_types_id">Tipo de sangre</label>
 					<select name="blood_types_id" class="form-control" >
 						<option value="{{ old('blood_types_id') }}">{{ old('blood_types_id') }}</option>
