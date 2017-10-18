@@ -1,7 +1,7 @@
 @extends('layout.admin.admin')
 
 @section('contenido')
-	<h2 style="display: inline-block;"><small>Transactions</small></h2><a href="#" class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#create_patient">Nuevo paciente</a>
+	<h2 style="display: inline-block;"><small>Transactions</small></h2><a href="/detalletransacciones/crear" class="btn btn-success btn-sm pull-right" >Nuevo paciente</a>
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 			<tr>
