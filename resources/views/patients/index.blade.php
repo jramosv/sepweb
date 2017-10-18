@@ -1,13 +1,13 @@
 @extends('layout.admin.admin')
 
 @section('contenido')
-	<h2 style="display: inline-block;"><small>Pacientes</small></h2><a href="#" class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#create_patient">Nuevo paciente</a>
+	<h2 style="display: inline-block;"><small>Pacientes</small></h2><a href="#" class="btn btn-success btn-sm pull-right" data-toggle="" data-target="#create_patient">Nuevo paciente</a>
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 			<tr>
 				<th>#</th>
 				<th>Nombre de paciente</th>
-				<th>Naciemiento</th>
+				<th>Nacimiento</th>
 				<th>Sexo</th>
 				<th>Email</th>
 				<th>Tipo Sangre</th>
