@@ -26,4 +26,8 @@ Route::get('/transacciones', 'TransactionsController@index');
 Route::get('/detalletransacciones', 'TransactionDetailsController@index');
 Route::get('/detalletransacciones/crear', 'TransactionDetailsController@create');
 Route::post('/detalletransacciones', 'TransactionDetailsController@store');
+Route::post('/detalletransacciones/editar', 'TransactionDetailsController@edit');
 
+Route::get('/suministros', 'SuppliesController@index');
+Route::get('/suministros/crear', 'SuppliesController@create');
+Route::post('/suministros', 'SuppliesController@store');

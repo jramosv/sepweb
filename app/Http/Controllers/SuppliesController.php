@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Supply;
 
 class SuppliesController extends Controller
 {
@@ -13,7 +14,8 @@ class SuppliesController extends Controller
      */
     public function index()
     {
-        //
+        $supplies = Supply::all();
+        return view('supplies.index', compact('supplies'));
     }
 
     /**
@@ -23,7 +25,7 @@ class SuppliesController extends Controller
      */
     public function create()
     {
-        //
+        return view('supplies.create');
     }
 
     /**
@@ -34,7 +36,13 @@ class SuppliesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $supply = new Supply();
+        $supply->name = $request->name;
+        $supply->quantity = $request->quantity;
+        $supply->price = $request->price;
+        $supply->detail = $request->detail;
+        $supply->save();
+        return redirect('/suministros')->with('status', 'El registro se creo correctamente!');
     }
 
     /**

@@ -34,9 +34,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/doctores">
+                    <a href="/suministros">
                         <i class="pe-7s-news-paper"></i>
-                        <p>Doctores</p>
+                        <p>Suministros</p>
                     </a>
                 </li>
                 <li>

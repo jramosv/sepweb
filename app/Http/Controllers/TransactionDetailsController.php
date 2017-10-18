@@ -42,7 +42,7 @@ class TransactionDetailsController extends Controller
         $transaction_detail->phone = $request->phone;
         $transaction_detail->address = $request->address;
         $transaction_detail->save();
-        return redirect('/detalletransacciones')->with('status', 'El paciente se creo correctamente!');
+        return redirect('/detalletransacciones')->with('status', 'El registro se creo correctamente!');
     }
     
 
