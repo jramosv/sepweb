@@ -35,10 +35,10 @@
 			@endif
 		</div>
 
-{{-- 		<div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
+		<div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
 			<label for="sex">Sexo </label>
 			<div class="radio">
-				<label for="sex"><input type="radio" name="sex" value="{{ old('sex') }}" >Masculino</label>
+				<label for="sex"><input type="radio" name="sex" value="{{ old('sex') }}" checked="checked" >Masculino</label>
 			</div>
 			<div class="radio">
 				<label for="sex"><input type="radio" name="sex" value="{{ old('sex') }}" >Femenino</label>
@@ -48,16 +48,7 @@
 					<strong>{{ $errors->first('sex') }}</strong>
 				</span>
 			@endif
-		</div> --}}
-		<div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
-			{{ Form::label('sex', 'Masculino')}} {{Form::radio('sex', 'Masculino', ($cliente->cli_sexo == 'M') ? true : false )}}
-			{{ Form::label('sex', 'Femenino')}} {{Form::radio('sex', 'Femenino', ($cliente->cli_sexo == 'F') ? true : false )}}
-			@if( $errors->has('sex'))
-				<span class="help-block">
-					<strong>{{ $errors->first('sex') }}</strong>
-				</span>
-			@endif
-		</div>
+		</div> 
 
 		<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
 			<label for="email">Correo electronico</label>
