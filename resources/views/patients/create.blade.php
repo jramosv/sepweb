@@ -38,7 +38,7 @@
 		<div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
 			<label for="sex">Sexo </label>
 			<br />
-				<label for="sex"><input type="radio" name="sex" value="Masculino" checked > Masculino</label>
+				<label for="sex"><input type="radio" name="sex" value="Masculino" > Masculino</label>
 				<br />
 				<label for="sex"><input type="radio" name="sex" value="Femenino" > Femenino</label>
 			@if( $errors->has('sex'))

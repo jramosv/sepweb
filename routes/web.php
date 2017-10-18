@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/pacientes', 'PatientController@index');
 Route::get('/pacientes/crear', 'PatientController@create');
 Route::post('/pacientes', 'PatientController@store');
+Route::get('/pacientes/{paciente}', 'PatientController@edit');
+Route::put('/pacientes', 'PatientController@update');
