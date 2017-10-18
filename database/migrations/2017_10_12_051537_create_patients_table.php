@@ -18,6 +18,8 @@ class CreatePatientsTable extends Migration
             $table->string('first_name',50);
             $table->string('last_name',50);
             $table->date('date_birth');
+            $table->string('address',200);
+            $table->integer('phone');
             $table->enum('sex', ['Masculino', 'Femenino']);
             $table->string('email',50);
             $table->integer('blood_types_id')->unsigned();

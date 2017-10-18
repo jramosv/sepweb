@@ -9,6 +9,8 @@
 				<th>#</th>
 				<th>Nombre de paciente</th>
 				<th>Naciemiento</th>
+				<th>Direccion</th>
+				<th>Telefono</th>
 				<th>Sexo</th>
 				<th>Email</th>
 				<th>Tipo Sangre</th>
@@ -22,6 +24,8 @@
 					<td>{{ $patient->first_name . ' ' . $patient->last_name }}</td>
 					<td>{{ $patient->date_birth }}</td>
 					<td>{{ $patient->sex }}</td>
+					<td>{{ $patient->address }}</td>
+					<td>{{ $patient->phone }}</td>
 					<td>{{ $patient->email }}</td>
 					<td>{{ $patient->tiposangre->type }}</td>
 					<td width="180px"> <a href="#" class="btn btn-primary btn-xs">Ver...</a> <a href="#" class="btn btn-warning btn-xs">Editar</a> <a href="#" class="btn btn-danger btn-xs">Eliminar</a></td>
