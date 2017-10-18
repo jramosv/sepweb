@@ -16,6 +16,15 @@ Route::get('/', function () {
 });
 
 Route::get('/pacientes', 'PatientController@index');
-
+<<<<<<< HEAD
 Route::get('/pacientes/crear', 'PatientController@create');
 Route::post('/pacientes', 'PatientController@store');
+
+=======
+
+Route::get('/crear', 'PatientController@create');
+
+Route::get('/morros', function(){
+	return "Morros";
+});
+>>>>>>> 88d34dfdfe93daec6a692da5cb56fbe718bc37c6

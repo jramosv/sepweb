@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Patient;
 use App\BloodType;
 use Illuminate\Http\Request;
-use App\Http\Requests\PatientFormRequest;
 
 class PatientController extends Controller
 {
@@ -17,9 +16,11 @@ class PatientController extends Controller
     public function index()
     {
 
+        $tipos_sangre = BloodType::all();
         $patients = Patient::all();
         return view('patients.index', compact('tipos_sangre', 'patients'));
 
+        //
     }
 
     /**
@@ -29,8 +30,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        $tipos_sangre = BloodType::all();
-        return view('patients.create', compact('tipos_sangre'));
+        return view('patients.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class PatientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PatientFormRequest $request)
+    public function store(Request $request)
     {
         $patient = new Patient();
         $patient->first_name = $request->first_name;
@@ -50,8 +50,8 @@ class PatientController extends Controller
         $patient->blood_types_id = $request->blood_types_id;
         $patient->save();
 
-        return redirect(url('/pacientes'))->with('satisfactorio', "El paciente $patient->first_name, $patient->last_name se creo correctamente");
-
+        //return redirect(url('/pacientes'))->with('satisfactorio', "El paciente $patient->first_name, $patient->last_name se creo correctamente");
+        return redirect('/pacientes')->with('status', 'El paciente se creo correctamente!');
     }
 
     /**
