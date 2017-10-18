@@ -37,12 +37,10 @@
 
 		<div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
 			<label for="sex">Sexo </label>
-			<div class="radio">
-				<label for="sex"><input type="radio" name="sex" value="{{ old('sex') }}" checked="checked" >Masculino</label>
-			</div>
-			<div class="radio">
-				<label for="sex"><input type="radio" name="sex" value="{{ old('sex') }}" >Femenino</label>
-			</div>
+			<br />
+				<label for="sex"><input type="radio" name="sex" value="Masculino" checked > Masculino</label>
+				<br />
+				<label for="sex"><input type="radio" name="sex" value="Femenino" > Femenino</label>
 			@if( $errors->has('sex'))
 				<span class="help-block">
 					<strong>{{ $errors->first('sex') }}</strong>

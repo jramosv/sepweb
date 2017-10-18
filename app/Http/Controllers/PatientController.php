@@ -50,8 +50,8 @@ class PatientController extends Controller
         $patient->blood_types_id = $request->blood_types_id;
         $patient->save();
 
-        return redirect(url('/pacientes'))->with('satisfactorio', "El paciente $patient->first_name, $patient->last_name se creo correctamente");
-
+        //return redirect(url('/pacientes'))->with('satisfactorio', "El paciente $patient->first_name, $patient->last_name se creo correctamente");
+        return redirect('/pacientes')->with('status', 'El paciente se creo correctamente!');
     }
 
     /**

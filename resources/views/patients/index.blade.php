@@ -1,6 +1,11 @@
 @extends('layout.admin.admin')
 @section('titulo', 'Pacientes')
 @section('contenido')
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
 	<h2 style="display: inline-block;"><small>Pacientes</small></h2><a href="/pacientes/crear" class="btn btn-success btn-sm pull-right" >Nuevo paciente</a>
 
 	<table class="table table-hover table-bordered table-striped">
