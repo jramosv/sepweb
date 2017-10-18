@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('layout.admin.admin');
 });
 
-Route::get('/pacientes/crear', 'PatientController@create');
-Route::post('/pacientes', 'PatientController@store');
+Route::get('/pacientes', 'PatientController@index');
 
-Route::get('/transacciones', 'TransactionsController@index');
+Route::get('/crear', 'PatientController@create');
+
+Route::get('/morros', function(){
+	return "Morros";
+});
