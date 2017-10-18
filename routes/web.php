@@ -21,6 +21,8 @@ Route::get('/crear', 'PatientController@create');
 
 Route::get('/transacciones', 'TransactionsController@index');
 
+Route::get('/detalletransacciones', 'TransactionDetailsController@index');
+Route::get('/detalletransacciones/crear', 'TransactionDetailsController@create');
 Route::get('/morros', function(){
 	return "Morros";
 });
