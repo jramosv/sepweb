@@ -28,9 +28,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/citas">
+                    <a href="/detalletransacciones">
                         <i class="pe-7s-note2"></i>
-                        <p>Citas</p>
+                        <p>Detalle de transacción</p>
                     </a>
                 </li>
                 <li>
