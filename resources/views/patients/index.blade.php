@@ -12,6 +12,8 @@
 			<tr>
 				<th>#</th>
 				<th>Nombre de paciente</th>
+				<th>Direccion</th>
+				<th>Telefono</th>
 				<th>Naciemiento</th>
 				<th>Sexo</th>
 				<th>Email</th>
@@ -24,6 +26,8 @@
 				<tr>
 					<td width="20px">{{ $patient->id }}</td>
 					<td>{{ $patient->first_name . ' ' . $patient->last_name }}</td>
+					<td>{{ $patient->address }}</td>
+					<td>{{ $patient->phone }}</td>
 					<td>{{ $patient->date_birth }}</td>
 					<td>{{ $patient->sex }}</td>
 					<td>{{ $patient->email }}</td>

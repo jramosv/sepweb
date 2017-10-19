@@ -25,6 +25,26 @@
 			@endif
 		</div>
 
+		<div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
+			<label for="address">Dirección</label>
+			<input type="text" name="address" class="form-control" placeholder="Dirección" value="{{ old('address') }}" />
+			@if( $errors->has('address'))
+				<span class="help-block">
+					<strong>{{ $errors->first('address') }}</strong>
+				</span>
+			@endif
+		</div>
+
+		<div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
+			<label for="phone">Telefono</label>
+			<input type="text" name="phone" class="form-control" placeholder="Telefono" value="{{ old('phone') }}" />
+			@if( $errors->has('phone'))
+				<span class="help-block">
+					<strong>{{ $errors->first('phone') }}</strong>
+				</span>
+			@endif
+		</div>
+
 		<div class="form-group {{ $errors->has('date_birth') ? 'has-error' : '' }}">
 			<label for="date_birth">Nacimiento</label>
 			<input type="date" name="date_birth" class="form-control" value="{{ old('date_birth') }}" placeholder="Fecha de nacimiento" />

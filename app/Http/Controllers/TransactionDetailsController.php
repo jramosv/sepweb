@@ -65,7 +65,7 @@ class TransactionDetailsController extends Controller
      */
     public function edit($id)
     {
-        //
+     
     }
 
     /**
@@ -77,7 +77,7 @@ class TransactionDetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+           return view('transaction_details.edit');
     }
 
     /**
