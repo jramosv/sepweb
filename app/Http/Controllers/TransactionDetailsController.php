@@ -65,7 +65,8 @@ class TransactionDetailsController extends Controller
      */
     public function edit($id)
     {
-     
+        $transaction_detail = TransactionDetail::find($transaction_detail->id);
+        return view('transaction_details.edit', compact('transaction_details'));
     }
 
     /**
@@ -75,9 +76,17 @@ class TransactionDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TransactionDetailsFormRequest $request, $id)
     {
-           return view('transaction_details.edit');
+          request()->validate([
+              'nit'=> 'required',
+              'name'=> 'required',
+              'phone'=> 'required',
+              'address'=> 'required',
+          ]);
+          TransactionDetail::find($id)->update($request->all());
+
+          return redirect()->route('transaction_details.index')->with('status','se registro bien');
     }
 
     /**
