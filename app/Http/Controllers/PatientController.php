@@ -17,7 +17,7 @@ class PatientController extends Controller
     public function index()
     {
 
-        $patients = Patient::all();
+        $patients = Patient::paginate(5);
         return view('patients.index', compact('tipos_sangre', 'patients'));
 
         //
@@ -58,25 +58,16 @@ class PatientController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Patient  $patient
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Patient $patient)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function edit(Patient $patient)
+    public function edit($id)
     {
-        //
+        $patient = Patient::find($id);
+        $tipos_sangre = BloodType::all();
+        return view('patients.edit', compact('tipos_sangre', 'patient'));
     }
 
     /**
@@ -86,9 +77,22 @@ class PatientController extends Controller
      * @param  \App\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Patient $patient)
+    public function update(PatientsFormRequest $request, Patient $patient)
     {
-        //
+        $patient->update(
+            $request->only(
+                [
+                    'first_name', 
+                    'last_name', 
+                    'address', 
+                    'phone', 
+                    'date_birth', 
+                    'sex',
+                    'email',
+                    'blood_types_id',
+                ]
+            ));
+        return redirect('/pacientes')->with('status', 'El paciente se actualizo correctamente!');
     }
 
     /**
@@ -99,6 +103,7 @@ class PatientController extends Controller
      */
     public function destroy(Patient $patient)
     {
-        //
+        $patient->delete();
+        return redirect('/pacientes')->with('status', 'El paciente se elimino de forma permanente!');
     }
 }

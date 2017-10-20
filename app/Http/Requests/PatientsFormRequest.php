@@ -27,9 +27,11 @@ class PatientsFormRequest extends FormRequest
             'first_name' => 'required',
             'last_name' => 'required',
             'date_birth' => 'required',
+            'address' => 'required',
+            'phone' => 'numeric|digits:8',
             'sex' => 'required',
             'email' => 'email',
-            'blood_types_id' => 'required',
+            'blood_types_id' => 'required|integer|not_in:0',
         ];
     }
 }
