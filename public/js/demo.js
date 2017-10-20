@@ -30,7 +30,7 @@ demo = {
                 align: 'right'
             }
         });
-	}
+	},
 
   showUpdateNotification: function(elemento){
       
@@ -46,7 +46,7 @@ demo = {
                 align: 'right'
             }
         });
-  }
+  },
 
   showDeleteNotification: function(elemento, nombre){
       
@@ -62,7 +62,7 @@ demo = {
                 align: 'right'
             }
         });
-  }
+  },
     
 }
 
