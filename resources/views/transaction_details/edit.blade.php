@@ -1,9 +1,9 @@
 @extends('layout.admin.admin')
-@section('titulo', 'Detalle de Transaccion')
+@section('titulo', 'Editar Detalle de Transaccion')
 @section('contenido')
-	<h4>Agregar informacion de contacto</h4>
+	<h4>Editar informacion de contacto</h4>
 
-	<form method="POST" action="/detalletransacciones/update">
+	<form action="{{ action('TransactionDetailsController@update', ['transaction_detail' => $transaction_detail ])}}"  method="POST">
 		{{ csrf_field() }}
 			{{ csrf_method('PUT') }}
 		<div class="form-group {{ $errors->has('nit') ? 'has-error' : '' }}">
