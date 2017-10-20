@@ -39,5 +39,6 @@ Route::post('/suministros', 'SuppliesController@store');
 Route::get('/enfermeras', 'NursesController@index');
 Route::get('/enfermeras/crear', 'NursesController@create');
 Route::post('/enfermeras', 'NursesController@store');
-Route::get('/enfermeras/editar/{$id}', 'NursesController@edit');
-Route::patch('/enfermeras/editar/{$id}', 'NursesController@update');
+Route::get('/enfermeras/{id}', 'NursesController@edit');
+Route::put('/enfermeras/{nurse}', 'NursesController@update');
+Route::delete('/enfermeras/{nurse}', 'NursesController@destroy');

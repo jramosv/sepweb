@@ -80,19 +80,18 @@ class NursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(NursesFormRequest $request, $id)
+    public function update(NursesFormRequest $request, Nurse $nurse)
     {
-        request()->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',                                                                              
-            'phone' => 'required',
-            'address' => 'required',
-        ]);
-
-        Nurse::find($id)->update($request->all());
-
-        return redirect()->route('nurses.index')
-                        ->with('status', 'El registro se creo correctamente!');
+        $nurse->update(
+            $request->only(
+                [
+                    'first_name', 
+                    'last_name', 
+                    'address', 
+                    'phone',
+                ]
+            ));
+        return redirect('/enfermeras')->with('status', 'La Enfermera se actualizo correctamente!');
         //
     }
 
@@ -102,8 +101,10 @@ class NursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Nurse $nurse)
     {
+        $nurse->delete();
+        return redirect('/enfermeras')->with('status', 'La enfermera se elimino de forma permanente!');
         //
     }
 }
