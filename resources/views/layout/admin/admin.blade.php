@@ -20,7 +20,7 @@
     <!--  Light Bootstrap Table core CSS    -->
     <link href="{{ asset('/css/light-bootstrap-dashboard.css') }}" rel="stylesheet"/>
 
-
+    <link rel="stylesheet" href="{{ asset('/css/sweetalert.css') }}">
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="{{ asset('/css/demo.css') }}" rel="stylesheet" />
 
@@ -120,8 +120,11 @@
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="{{ asset('/js/light-bootstrap-dashboard.js') }}"></script>
 
+    <script src="{{ asset('/js/sweetalert.min.js') }}"></script>
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="{{ asset('/js/demo.js') }}"></script>
+
+    @include('sweet::alert')
 
 	{{--  <script type="text/javascript">
     	$(document).ready(function(){
