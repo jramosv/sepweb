@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Nurse;
 use Illuminate\Http\Request;
+use App\Http\Requests\NursesFormRequest;
 
 class NursesController extends Controller
 {
@@ -13,6 +15,9 @@ class NursesController extends Controller
      */
     public function index()
     {
+        $nurses = Nurse::all();
+        return view('nurses.index', compact('nurses'));
+
         //
     }
 
@@ -23,6 +28,7 @@ class NursesController extends Controller
      */
     public function create()
     {
+        return view('nurses.create');
         //
     }
 
@@ -32,9 +38,15 @@ class NursesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NursesFormRequest $request)
     {
-        //
+        $nurse = new Nurse();
+        $nurse->first_name = $request->first_name;
+        $nurse->last_name = $request->last_name;
+        $nurse->phone = $request->phone;
+        $nurse->address = $request->address;
+        $nurse->save();
+        return redirect('/enfermeras')->with('status', 'El registro se creo correctamente!');
     }
 
     /**
@@ -56,6 +68,8 @@ class NursesController extends Controller
      */
     public function edit($id)
     {
+        $nurse = Nurse::find($id);
+        return view('nurses.edit', compact('nurse'));
         //
     }
 
@@ -66,8 +80,19 @@ class NursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(NursesFormRequest $request, $id)
     {
+        request()->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',                                                                              
+            'phone' => 'required',
+            'address' => 'required',
+        ]);
+
+        Nurse::find($id)->update($request->all());
+
+        return redirect()->route('nurses.index')
+                        ->with('status', 'El registro se creo correctamente!');
         //
     }
 

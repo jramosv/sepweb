@@ -31,3 +31,9 @@ Route::post('/detalletransacciones/editar', 'TransactionDetailsController@edit')
 Route::get('/suministros', 'SuppliesController@index');
 Route::get('/suministros/crear', 'SuppliesController@create');
 Route::post('/suministros', 'SuppliesController@store');
+
+Route::get('/enfermeras', 'NursesController@index');
+Route::get('/enfermeras/crear', 'NursesController@create');
+Route::post('/enfermeras', 'NursesController@store');
+Route::get('/enfermeras/editar/{$id}', 'NursesController@edit');
+Route::patch('/enfermeras/editar/{$id}', 'NursesController@update');
