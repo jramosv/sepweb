@@ -65,7 +65,8 @@ class TransactionDetailsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $transaction_detail = TransactionDetail::find($id);
+        return view('transaction_details.edit', compact('transaction_detail'));
     }
 
     /**
@@ -75,9 +76,19 @@ class TransactionDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TransactionDetailsFormRequest $request, TransactionDetail $transaction_detail)
     {
-        //
+        $transaction_detail->update(
+          $request->only(
+              [
+              'nit',
+              'name',
+              'phone',
+              'address',
+          ]
+        ));
+          
+          return redirect('/detalletransacciones')->with('status','se registro bien');
     }
 
     /**
@@ -86,8 +97,9 @@ class TransactionDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(TransactionDetail $transaction_detail)
     {
-        //
+        $transaction_detail->delete();
+        return redirect('/detalletransacciones')->with('status', 'El Registro se elimino de forma permanente!');
     }
 }

@@ -18,15 +18,19 @@ Route::get('/', function () {
 Route::get('/pacientes', 'PatientController@index');
 Route::get('/pacientes/crear', 'PatientController@create');
 Route::post('/pacientes', 'PatientController@store');
-Route::get('/pacientes/{paciente}', 'PatientController@edit');
-Route::put('/pacientes', 'PatientController@update');
+Route::get('/pacientes/{id}', 'PatientController@edit');
+Route::put('/pacientes/{patient}', 'PatientController@update');
+Route::delete('/pacientes/{patient}', 'PatientController@destroy');
+
 
 Route::get('/transacciones', 'TransactionsController@index');
 
 Route::get('/detalletransacciones', 'TransactionDetailsController@index');
 Route::get('/detalletransacciones/crear', 'TransactionDetailsController@create');
 Route::post('/detalletransacciones', 'TransactionDetailsController@store');
-Route::post('/detalletransacciones/editar', 'TransactionDetailsController@edit');
+Route::get('/detalletransacciones/{id}', 'TransactionDetailsController@edit');
+Route::put('/detalletransacciones/{patient}', 'TransactionDetailsController@update');
+Route::delete('/detalletransacciones/{transaction_detail}', 'TransactionDetailsController@destroy');
 
 Route::get('/suministros', 'SuppliesController@index');
 Route::get('/suministros/crear', 'SuppliesController@create');

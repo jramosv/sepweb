@@ -20,7 +20,7 @@
     <!--  Light Bootstrap Table core CSS    -->
     <link href="{{ asset('/css/light-bootstrap-dashboard.css') }}" rel="stylesheet"/>
 
-
+    <link rel="stylesheet" href="{{ asset('/css/sweetalert.css') }}">
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="{{ asset('/css/demo.css') }}" rel="stylesheet" />
 
@@ -51,57 +51,32 @@
                             <a class="navbar-brand" href="#">Dashboard</a>
                         </div>
                         <div class="collapse navbar-collapse">
-                            <ul class="nav navbar-nav navbar-left">
-                                <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="fa fa-dashboard"></i>
-                                    </a>
-                                </li>
-                                <li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <i class="fa fa-globe"></i>
-                                            <b class="caret"></b>
-                                            <span class="notification">5</span>
-                                      </a>
-                                      <ul class="dropdown-menu">
-                                        <li><a href="#">Notification 1</a></li>
-                                        <li><a href="#">Notification 2</a></li>
-                                        <li><a href="#">Notification 3</a></li>
-                                        <li><a href="#">Notification 4</a></li>
-                                        <li><a href="#">Another notification</a></li>
-                                      </ul>
-                                </li>
-                                <li>
-                                   <a href="">
-                                        <i class="fa fa-search"></i>
-                                    </a>
-                                </li>
-                            </ul>
-
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                    <a href="">
-                                       Account
+                                    <i class="fa fa-user-md" aria-hidden="true"></i>
+                                       Freddy Marroquin { Pediatra/Pedofilo }
                                     </a>
                                 </li>
                                 <li class="dropdown">
                                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            Dropdown
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                            Mi Panel
                                             <b class="caret"></b>
                                       </a>
                                       <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something</a></li>
+                                        <li><a href="#">Editar info.</a></li>
+                                        <li><a href="#">Cambiar contraseña</a></li>
+                                        <li><a href="#">Bandeja de mensajes</a></li>
+                                        <li><a href="#">Reportar fallos</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
+                                        <li><a href="#">Darme de baja</a></li>
                                       </ul>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        Log out
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        Cerrar sesión
                                     </a>
                                 </li>
                             </ul>
@@ -145,8 +120,11 @@
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="{{ asset('/js/light-bootstrap-dashboard.js') }}"></script>
 
+    <script src="{{ asset('/js/sweetalert.min.js') }}"></script>
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="{{ asset('/js/demo.js') }}"></script>
+
+    @include('sweet::alert')
 
 	{{--  <script type="text/javascript">
     	$(document).ready(function(){

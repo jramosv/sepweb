@@ -108,6 +108,8 @@ return [
     'attributes' => [
         'first_name' => 'Nombre',
         'last_name' => 'Apellidos',
+        'address' => 'Dirección',
+        'phone' => 'Telefono',
         'date_birth' => 'Fecha de nacimiento',
         'sex' => 'Sexo',
         'email' => 'Correo electronico',
