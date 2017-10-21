@@ -18,7 +18,7 @@
 		<div class="form-group {{ $errors->has('bed') ? 'has-error' : '' }}">
         <div class="col-xs-2">
 			<label for="bed">No. Cama</label>
-			<input type="number" name="bed" class="form-control" value="{{ old('bed') }}" placeholder="No.Cama" min="1" max="5" />
+			<input type="number" name="bed" class="form-control" value="{{ old('bed') }}" placeholder="No.Cama" min="1" max="100" />
 		</div>
 		<div class="col-xs-4">
             @if( $errors->has('bed'))

@@ -56,6 +56,7 @@ Route::post('/especialidades', 'SpecialtiesController@store');
 Route::get('/especialidades/{id}', 'SpecialtiesController@edit');
 Route::put('/especialidades/{specialty}', 'SpecialtiesController@update');
 Route::delete('/especialidades/{specialty}', 'SpecialtiesController@destroy');
+
 Route::get('/habitaciones', 'RoomsController@index');
 Route::get('/habitaciones/crear', 'RoomsController@create');
 Route::post('/habitaciones', 'RoomsController@store');

@@ -23,26 +23,23 @@
 					<td>{{ $room->name }}</td>
 					<td>{{ $room->bed }}</td>
 					
-					<td width="120px">
-					<a href="#" class="btn btn-primary btn-xs">
+					<td width="122px">
+					<a href="#" class="btn btn-primary btn-xs" onclick="event.preventDefault();
+								alert('TODO: Aqui se mostrara el historial de las habitaciones.');">
 						<i class="fa fa-user-md" aria-hidden="true"></i>
 					</a>
 					<a href="/habitaciones/{{ $room->id }}" class="btn btn-warning btn-xs">
 						<i class="fa fa-pencil" aria-hidden="true"></i>
 					</a>
-					<a href="#"
-					   onclick="event.preventDefault();
-								document.getElementById('delete-form').submit();" class="btn btn-danger btn-xs">
-						<i class="fa fa-trash" aria-hidden="true"></i>
-					</a>
-
-					<form id="delete-form" action="{{ action('RoomsController@destroy', ['room' => $room ])}}" method="POST" style="display: none;">
+					<form id="delete-form"  action="{{ action('RoomsController@destroy', ['room' => $room ])}}" method="POST" style="display: inline;">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
+						<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
 					</form>
-					</td>				
-				</tr>
-			@endforeach
-		</tbody>
-	</table>
+				</td>
+			</tr>
+		@endforeach
+	</tbody>
+</table>
+{!! $rooms->render() !!}
 @endsection
