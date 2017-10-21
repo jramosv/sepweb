@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Specialty;
 use Illuminate\Http\Request;
+use App\Http\Requests\SpecialtiesFormRequest;
 
 class SpecialtiesController extends Controller
 {
@@ -13,7 +14,10 @@ class SpecialtiesController extends Controller
      */
     public function index()
     {
-        //
+        
+        $specialties = Specialty::all();
+        return view('specialties.index', compact('specialties'));
+
     }
 
     /**
@@ -23,7 +27,8 @@ class SpecialtiesController extends Controller
      */
     public function create()
     {
-        //
+        return view('specialties.create');
+        // 
     }
 
     /**
@@ -34,7 +39,10 @@ class SpecialtiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $specialty = new Specialty();
+        $specialty->name = $request->name;
+        $specialty->save();
+        return redirect('/especialidades')->with('status', 'El registro se creo correctamente!');
     }
 
     /**
@@ -56,7 +64,9 @@ class SpecialtiesController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $specialty = Specialty::find($id);
+        return view('specialties.edit', compact('specialty'));
     }
 
     /**
@@ -66,8 +76,15 @@ class SpecialtiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SpecialtiesFormRequest $request, Specialty $specialty)
     {
+        $specialty->update(
+            $request->only(
+                [
+                    'name', 
+                ]
+            ));
+        return redirect('/especialidades')->with('status', 'La Especialidad se actualizo correctamente!');
         //
     }
 
@@ -77,8 +94,10 @@ class SpecialtiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Specialty $specialty)
     {
+        $specialty->delete();
+        return redirect('/especialidades')->with('status', 'La especialidad se elimino de forma permanente!');
         //
     }
 }

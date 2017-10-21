@@ -35,3 +35,30 @@ Route::delete('/detalletransacciones/{transaction_detail}', 'TransactionDetailsC
 Route::get('/suministros', 'SuppliesController@index');
 Route::get('/suministros/crear', 'SuppliesController@create');
 Route::post('/suministros', 'SuppliesController@store');
+
+Route::get('/enfermeras', 'NursesController@index');
+Route::get('/enfermeras/crear', 'NursesController@create');
+Route::post('/enfermeras', 'NursesController@store');
+Route::get('/enfermeras/{id}', 'NursesController@edit');
+Route::put('/enfermeras/{nurse}', 'NursesController@update');
+Route::delete('/enfermeras/{nurse}', 'NursesController@destroy');
+
+Route::get('/doctores', 'DoctorsController@index');
+Route::get('/doctores/crear', 'DoctorsController@create');
+Route::post('/doctores', 'DoctorsController@store');
+Route::get('/doctores/{id}', 'DoctorsController@edit');
+Route::put('/doctores/{doctor}', 'DoctorsController@update');
+Route::delete('/doctores/{doctor}', 'DoctorsController@destroy');
+
+Route::get('/especialidades', 'SpecialtiesController@index');
+Route::get('/especialidades/crear', 'SpecialtiesController@create');
+Route::post('/especialidades', 'SpecialtiesController@store');
+Route::get('/especialidades/{id}', 'SpecialtiesController@edit');
+Route::put('/especialidades/{specialty}', 'SpecialtiesController@update');
+Route::delete('/especialidades/{specialty}', 'SpecialtiesController@destroy');
+Route::get('/habitaciones', 'RoomsController@index');
+Route::get('/habitaciones/crear', 'RoomsController@create');
+Route::post('/habitaciones', 'RoomsController@store');
+Route::get('/habitaciones/{id}', 'RoomsController@edit');
+Route::put('/habitaciones/{room}', 'RoomsController@update');
+Route::delete('/habitaciones/{room}', 'RoomsController@destroy');
