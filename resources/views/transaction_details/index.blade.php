@@ -21,10 +21,24 @@
 					<td>{{ $transaction_detail->name }}</td>
 					<td>{{ $transaction_detail->phone }}</td>
 					<td>{{ $transaction_detail->address }}</td>
-					<td width="180px"> <a href="#" class="btn btn-primary btn-xs">Ver...</a> <a href="#" class="btn btn-warning btn-xs">Editar</a> <a href="#" class="btn btn-danger btn-xs">Eliminar</a></td>
+					<td width="120px">
+						<a href="#" class="btn btn-primary btn-xs">
+							<i class="fa fa-user-md" aria-hidden="true"></i>
+						</a>
+						<a href="/detalletransacciones/{{ $transaction_detail->id }}" class="btn btn-warning btn-xs">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</a>
+						<a href="#"
+                           onclick="event.preventDefault();
+                                    document.getElementById('delete-form').submit();" class="btn btn-danger btn-xs">
+							<i class="fa fa-trash" aria-hidden="true"></i>
+						</a>
+
+                        <form id="delete-form" action="{{ action('TransactionDetailsController@destroy', ['transaction_detail' => $transaction_detail ])}}" method="POST" style="display: none;">
+                        	{{ csrf_field() }}
+                        	{{ method_field('DELETE') }}
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
-	@include('patients.modals.create')
 @endsection

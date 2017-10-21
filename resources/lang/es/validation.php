@@ -114,6 +114,8 @@ return [
         'sex' => 'Sexo',
         'email' => 'Correo electronico',
         'blood_types_id' => 'Tipo de sangre',
+        'phone' => 'Telefono',
+        'address' => 'Direccion',
     ],
 
 ];

@@ -28,8 +28,17 @@ Route::get('/transacciones', 'TransactionsController@index');
 Route::get('/detalletransacciones', 'TransactionDetailsController@index');
 Route::get('/detalletransacciones/crear', 'TransactionDetailsController@create');
 Route::post('/detalletransacciones', 'TransactionDetailsController@store');
-Route::put('/detalletransacciones/editar', 'TransactionDetailsController@update');
+Route::get('/detalletransacciones/{id}', 'TransactionDetailsController@edit');
+Route::put('/detalletransacciones/{patient}', 'TransactionDetailsController@update');
+Route::delete('/detalletransacciones/{transaction_detail}', 'TransactionDetailsController@destroy');
 
 Route::get('/suministros', 'SuppliesController@index');
 Route::get('/suministros/crear', 'SuppliesController@create');
 Route::post('/suministros', 'SuppliesController@store');
+
+Route::get('/enfermeras', 'NursesController@index');
+Route::get('/enfermeras/crear', 'NursesController@create');
+Route::post('/enfermeras', 'NursesController@store');
+Route::get('/enfermeras/{id}', 'NursesController@edit');
+Route::put('/enfermeras/{nurse}', 'NursesController@update');
+Route::delete('/enfermeras/{nurse}', 'NursesController@destroy');
