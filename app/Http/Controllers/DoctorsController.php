@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Doctor;
 use App\Specialty;
 use Illuminate\Http\Request;
+use App\Http\Requests\DoctorsFormRequest;
 
 class DoctorsController extends Controller
 {   /**
@@ -39,13 +40,14 @@ class DoctorsController extends Controller
     public function store(DoctorsFormRequest $request)
     {
         $doctor = new Doctor();
+
         $doctor->first_name = $request->first_name;
         $doctor->last_name = $request->last_name;
         $doctor->address = $request->address;
         $doctor->phone = $request->phone;
         $doctor->speciality_id = $request->speciality_id;
         $doctor->save();
-        return redirect('/doctores')->with('status', 'El registro se creo correctamente!');
+        return redirect('/doctores')->with('status', 'El doctor se creo correctamente!');
     }
 
     /**

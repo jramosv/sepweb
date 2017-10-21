@@ -24,11 +24,13 @@ class DoctorsFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name', 
-            'last_name', 
-            'address', 
-            'phone',
-            'speciality_id'
+            'first_name' => 'required',
+            'last_name' => 'required',                                                                              
+            'phone' => 'required',
+            'address' => 'required',
+            'speciality_id' => 'required',
+
+            //
         ];
     }
 }

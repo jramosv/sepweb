@@ -12,7 +12,6 @@
 			<tr>
 				<th>#</th>
 				<th>Nombre del doctor</th>
-				<th>Apellido</th>
 				<th>Direccion</th>
 				<th>Telefono</th>
 				<th>Especialidad</th>
@@ -23,11 +22,10 @@
 			@foreach($doctors as $doctor)
 				<tr>
 					<td width="20px">{{ $doctor->id }}</td>
-					<td>{{ $doctor->firs_name }}</td>
-                    <td>{{ $doctor->last_name }}</td>
+					<td>{{ $doctor->first_name . ' ' . $doctor->last_name }}</td>
 					<td>{{ $doctor->address }}</td>
 					<td>{{ $doctor->phone }}</td>
-					<td>{{ $doctor->speciality_id }}</td>
+					<td>{{ $doctor->especialidad->name }}</td>
 					<td width="120px">
 						<a href="#" class="btn btn-primary btn-xs">
 							<i class="fa fa-user-md" aria-hidden="true"></i>
