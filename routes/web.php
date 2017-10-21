@@ -42,3 +42,10 @@ Route::post('/enfermeras', 'NursesController@store');
 Route::get('/enfermeras/{id}', 'NursesController@edit');
 Route::put('/enfermeras/{nurse}', 'NursesController@update');
 Route::delete('/enfermeras/{nurse}', 'NursesController@destroy');
+
+Route::get('/habitaciones', 'RoomsController@index');
+Route::get('/habitaciones/crear', 'RoomsController@create');
+Route::post('/habitaciones', 'RoomsController@store');
+Route::get('/habitaciones/{id}', 'RoomsController@edit');
+Route::put('/habitaciones/{room}', 'RoomsController@update');
+Route::delete('/habitaciones/{room}', 'RoomsController@destroy');

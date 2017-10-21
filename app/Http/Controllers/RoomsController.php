@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Room;
+use App\Http\Requests\RoomsFormRequest;
 use Illuminate\Http\Request;
 
 class RoomsController extends Controller
@@ -13,6 +14,8 @@ class RoomsController extends Controller
      */
     public function index()
     {
+        $rooms = Room::paginate(5);
+        return view('rooms.index', compact('rooms'));
         //
     }
 
@@ -23,6 +26,7 @@ class RoomsController extends Controller
      */
     public function create()
     {
+        return view('rooms.create');
         //
     }
 
@@ -32,8 +36,16 @@ class RoomsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoomsFormRequest $request)
     {
+        $room = new Room();
+        $room->name = $request->name;
+        $room->bed = $request->bed;
+        $room->save();
+
+        //return redirect(url('/pacientes'))->with('satisfactorio', "El paciente $patient->first_name, $patient->last_name se creo correctamente");
+        return redirect('/habitaciones')->with('status', 'La habitacion se creo correctamente!');
+    
         //
     }
 
@@ -56,6 +68,9 @@ class RoomsController extends Controller
      */
     public function edit($id)
     {
+        $rooms = Room::find($id);
+        
+        return view('rooms.edit', compact('rooms'));
         //
     }
 
@@ -66,10 +81,20 @@ class RoomsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RoomsFormRequest $request, Room $room)
     {
-        //
+        
+        $room->update(
+            $request->only(
+                [
+                    'name', 
+                    'bed', 
+                ]
+            ));
+        return redirect('/habitaciones')->with('status', 'La habitacion se actualizo correctamente!');
     }
+        //
+    
 
     /**
      * Remove the specified resource from storage.
@@ -77,8 +102,10 @@ class RoomsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Room $room)
     {
+        $room->delete();
+        return redirect('/habitaciones')->with('status', 'La habitacion se elimino de forma permanente!');
         //
     }
 }
