@@ -42,3 +42,17 @@ Route::post('/enfermeras', 'NursesController@store');
 Route::get('/enfermeras/{id}', 'NursesController@edit');
 Route::put('/enfermeras/{nurse}', 'NursesController@update');
 Route::delete('/enfermeras/{nurse}', 'NursesController@destroy');
+
+Route::get('/doctores', 'DoctorsController@index');
+Route::get('/doctores/crear', 'DoctorsController@create');
+Route::post('/doctores', 'DoctorsController@store');
+Route::get('/doctores/{id}', 'DoctorsController@edit');
+Route::put('/doctores/{doctor}', 'DoctorsController@update');
+Route::delete('/doctores/{doctor}', 'DoctorsController@destroy');
+
+Route::get('/especialidades', 'SpecialtiesController@index');
+Route::get('/especialidades/crear', 'SpecialtiesController@create');
+Route::post('/especialidades', 'SpecialtiesController@store');
+Route::get('/especialidades/{id}', 'SpecialtiesController@edit');
+Route::put('/especialidades/{specialty}', 'SpecialtiesController@update');
+Route::delete('/especialidades/{specialty}', 'SpecialtiesController@destroy');

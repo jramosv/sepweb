@@ -1,19 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Doctor;
+use App\Specialty;
 use Illuminate\Http\Request;
 
 class DoctorsController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+{   /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function index()
+   
     {
-        //
+        $doctors = Doctor::all();
+        return view('doctors.index', compact('especialidades','doctors'));
+
     }
 
     /**
@@ -23,7 +26,8 @@ class DoctorsController extends Controller
      */
     public function create()
     {
-        //
+        $especialidades = Specialty::all();
+        return view('doctors.create', compact('especialidades'));
     }
 
     /**
@@ -32,9 +36,16 @@ class DoctorsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DoctorsFormRequest $request)
     {
-        //
+        $doctor = new Doctor();
+        $doctor->first_name = $request->first_name;
+        $doctor->last_name = $request->last_name;
+        $doctor->address = $request->address;
+        $doctor->phone = $request->phone;
+        $doctor->speciality_id = $request->speciality_id;
+        $doctor->save();
+        return redirect('/doctores')->with('status', 'El registro se creo correctamente!');
     }
 
     /**
@@ -56,7 +67,9 @@ class DoctorsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $doctor = Doctor::find($id);
+        $especialidades = Specialty::all();
+        return view('doctors.edit', compact('especialidades', 'doctor'));
     }
 
     /**
@@ -66,9 +79,19 @@ class DoctorsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DoctorsFormRequest $request, Doctor $doctor)
     {
-        //
+        $doctor->update(
+            $request->only(
+                [
+                    'first_name', 
+                    'last_name', 
+                    'address', 
+                    'phone',
+                    'speciality_id'
+                ]
+            ));
+        return redirect('/doctores')->with('status', 'El Doctor se actualizo correctamente!');
     }
 
     /**
@@ -77,8 +100,9 @@ class DoctorsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Doctor $doctor)
     {
-        //
+        $doctor->delete();
+        return redirect('/doctores')->with('status', 'El doctor se elimino de forma permanente!');
     }
 }
