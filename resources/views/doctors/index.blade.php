@@ -35,15 +35,10 @@
 						<a href="/doctores/{{ $doctor->id }}" class="btn btn-warning btn-xs">
 							<i class="fa fa-pencil" aria-hidden="true"></i>
 						</a>
-						<a href="#"
-                           onclick="event.preventDefault();
-                                    document.getElementById('delete-form').submit();" class="btn btn-danger btn-xs">
-							<i class="fa fa-trash" aria-hidden="true"></i>
-						</a>
-
-                        <form id="delete-form" action="{{ action('DoctorsController@destroy', ['doctor' => $doctor ])}}" method="POST" style="display: none;">
+                        <form id="delete-form"  action="{{ action('DoctorsController@destroy', ['doctor' => $doctor ])}}" method="POST" style="display: inline;">
                         	{{ csrf_field() }}
                         	{{ method_field('DELETE') }}
+                        	<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </form>
 					</td>
 				</tr>
