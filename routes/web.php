@@ -35,6 +35,9 @@ Route::delete('/detalletransacciones/{transaction_detail}', 'TransactionDetailsC
 Route::get('/suministros', 'SuppliesController@index');
 Route::get('/suministros/crear', 'SuppliesController@create');
 Route::post('/suministros', 'SuppliesController@store');
+Route::get('/suministros/{id}', 'SuppliesController@edit');
+Route::put('/suministros/{supply}', 'SuppliesController@update');
+Route::delete('/suministros/{supply}', 'SuppliesController@destroy');
 
 Route::get('/enfermeras', 'NursesController@index');
 Route::get('/enfermeras/crear', 'NursesController@create');
