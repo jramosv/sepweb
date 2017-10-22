@@ -71,3 +71,9 @@ Route::get('/hospitalizaciones', 'HospitalizationsController@index');
 Route::get('/hospitalizaciones/crear', 'HospitalizationsController@create');
 Route::post('/hospitalizaciones', 'HospitalizationsController@store');
 
+Route::get('/transacciones', 'TransactionsController@index');
+Route::get('/transacciones/crear', 'TransactionsController@create');
+Route::post('/transacciones', 'TransactionsController@store');
+Route::get('/transacciones/{id}', 'TransactionsController@edit');
+Route::put('/transacciones/{transaction}', 'TransactionsController@update');
+Route::delete('/transacciones/{transaction}', 'TransactionsController@destroy');

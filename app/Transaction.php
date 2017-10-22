@@ -12,16 +12,16 @@ class Transaction extends Model
 
         public function Type()
         {        
-            return $this->hasOne('App\TransactionType', 'type_id'); 
+            return $this->belongsTo('App\TransactionType', 'type_id'); 
         }
 
         public function Detail()
         {        
-            return $this->hasOne('App\TransactionDetail', 'detail_id'); 
+            return $this->belongsTo('App\TransactionDetail', 'detail_id'); 
         }
 
         public function Supply()
         {        
-            return $this->hasOne('App\Supply', 'supply_id'); 
+            return $this->belongsTo('App\Supply', 'supply_id'); 
         }
 }
