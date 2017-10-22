@@ -68,9 +68,9 @@ class RoomsController extends Controller
      */
     public function edit($id)
     {
-        $room = Room::find($id);
+        $rooms = Room::find($id);
         
-        return view('rooms.edit', compact('room'));
+        return view('rooms.edit', compact('rooms'));
         //
     }
 

@@ -63,3 +63,8 @@ Route::post('/habitaciones', 'RoomsController@store');
 Route::get('/habitaciones/{id}', 'RoomsController@edit');
 Route::put('/habitaciones/{room}', 'RoomsController@update');
 Route::delete('/habitaciones/{room}', 'RoomsController@destroy');
+
+Route::get('/hospitalizaciones', 'HospitalizationsController@index');
+Route::get('/hospitalizaciones/crear', 'HospitalizationsController@create');
+Route::post('/hospitalizaciones', 'HospitalizationsController@store');
+
