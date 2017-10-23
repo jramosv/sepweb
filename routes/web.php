@@ -71,8 +71,6 @@ Route::post('/habitaciones', 'RoomsController@store');
 Route::get('/habitaciones/{id}', 'RoomsController@edit');
 Route::put('/habitaciones/{room}', 'RoomsController@update');
 Route::delete('/habitaciones/{room}', 'RoomsController@destroy');
-<<<<<<< HEAD
-=======
 
 Route::get('/hospitalizaciones', 'HospitalizationsController@index');
 Route::get('/hospitalizaciones/crear', 'HospitalizationsController@create');
@@ -84,4 +82,3 @@ Route::post('/transacciones', 'TransactionsController@store');
 Route::get('/transacciones/{id}', 'TransactionsController@edit');
 Route::put('/transacciones/{transaction}', 'TransactionsController@update');
 Route::delete('/transacciones/{transaction}', 'TransactionsController@destroy');
->>>>>>> fef375ef65a0fc6bdf31b5072c1134617ef56087
