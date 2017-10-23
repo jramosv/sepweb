@@ -20,6 +20,10 @@
     <!--  Light Bootstrap Table core CSS    -->
     <link href="{{ asset('/css/light-bootstrap-dashboard.css') }}" rel="stylesheet"/>
 
+    <link href="{{ asset('/css/jquery.dataTables.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('/css/buttons.dataTables.min.css') }}" rel="stylesheet"/>
+    
+
     <link rel="stylesheet" href="{{ asset('/css/sweetalert.css') }}">
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="{{ asset('/css/demo.css') }}" rel="stylesheet" />
@@ -102,7 +106,7 @@
 </body>
 
     <!--   Core JS Files   -->
-    <script src="{{ asset('/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/jquery-1.12.4.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
@@ -118,7 +122,16 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-	<script src="{{ asset('/js/light-bootstrap-dashboard.js') }}"></script>
+    <script src="{{ asset('/js/light-bootstrap-dashboard.js') }}"></script>
+	
+    <script src="{{ asset('/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('/js/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('/js/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('/js/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('/js/buttons.print.min.js') }}"></script>
 
     <script src="{{ asset('/js/sweetalert.min.js') }}"></script>
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
@@ -126,21 +139,6 @@
 
     @include('sweet::alert')
 
-	{{--  <script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-            },{
-                type: 'info',
-                timer: 4000
-            });
-
-    	});
-	</script>  --}}
+	@yield('script')
 
 </html>

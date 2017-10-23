@@ -19,6 +19,8 @@ Route::get('/pacientes', 'PatientController@index');
 Route::get('/pacientes/crear', 'PatientController@create');
 Route::post('/pacientes', 'PatientController@store');
 Route::get('/pacientes/{id}', 'PatientController@edit');
+Route::get('/pacientes_lista', 'PatientController@getPatientsData');
+Route::get('/pacientes_todos_pdf', 'PatientController@listarPacientesPdf');
 Route::put('/pacientes/{patient}', 'PatientController@update');
 Route::delete('/pacientes/{patient}', 'PatientController@destroy');
 
