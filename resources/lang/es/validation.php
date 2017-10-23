@@ -116,6 +116,9 @@ return [
         'blood_types_id' => 'Tipo de sangre',
         'phone' => 'Telefono',
         'address' => 'Direccion',
+        'name' => 'Nombre',
+        'bed' => 'Cama',
+
     ],
 
 ];

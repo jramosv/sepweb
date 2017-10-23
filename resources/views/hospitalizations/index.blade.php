@@ -5,24 +5,28 @@
         {{ session('status') }}
     </div>
 @endif
-	<h2 style="display: inline-block;"><small>Enfermeras</small></h2><a href="/enfermeras/crear" class="btn btn-success btn-sm pull-right" >Nuevo enfermero</a>
+	<h2 style="display: inline-block;"><small>Hospitalizaciones</small></h2><a href="/hospitalizaciones/crear" class="btn btn-success btn-sm pull-right" >Nuevo hospitalizacion</a>
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>Nombre</th>
-				<th>Telefono</th>
-				<th>Direccion</th>
+                <th>Entrada</th>
+                <th>Paciente</th>
+                <th>Habitacion</th>
+                <th>Enfermera</th>
+                <th>Salida</th>
+                <th>Procedimiento</th>
 				<th>Acciones</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($nurses as $nurse)
+			@foreach($hospitalizations as $hospitalization)
 				<tr>
-					<td width="20px">{{ $nurse->id }}</td>
-					<td>{{ $nurse->first_name . ' ' . $nurse->last_name }}</td>
-					<td>{{ $nurse->phone }}</td>
-					<td>{{ $nurse->address }}</td>
+					<td width="20px">{{ $hospitalization->id }}</td>
+					<td>{{ $hospitalization->input }}</td>
+					<td>{{ $hospitalization->patients }}</td>
+					<td>{{ $hospitalization->rooms }}</td>
+                    <td>{{ $hospitalization->nurses }}</td>
 
 					<td width="122px">
 					<a href="#" class="btn btn-primary btn-xs" onclick="event.preventDefault();
@@ -42,5 +46,5 @@
 		@endforeach
 	</tbody>
 </table>
-{!! $nurses->render() !!}
+{!! $hospitalizations->render() !!}
 @endsection

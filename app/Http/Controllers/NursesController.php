@@ -15,7 +15,7 @@ class NursesController extends Controller
      */
     public function index()
     {
-        $nurses = Nurse::all();
+        $nurses = Nurse::paginate(5);
         return view('nurses.index', compact('nurses'));
 
         //

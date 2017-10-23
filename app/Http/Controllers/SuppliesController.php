@@ -65,7 +65,8 @@ class SuppliesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $supply = Supply::find($id);
+        return view('supplies.edit', compact('supply'));
     }
 
     /**
@@ -75,9 +76,19 @@ class SuppliesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SupliesFormRequest $request, Supply $supply)
     {
-        //
+        $supply->update(
+            $request->only(
+                [
+                'name',
+                'quantity',
+                'price',
+                'address',
+            ]
+          ));
+            
+            return redirect('/suministros')->with('status','se registro bien');
     }
 
     /**
@@ -86,8 +97,9 @@ class SuppliesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Supply $supply)
     {
-        //
+        $supply->delete();
+        return redirect('/suministros')->with('status', 'El Registro se elimino de forma permanente!');
     }
 }

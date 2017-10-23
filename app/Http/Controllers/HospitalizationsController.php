@@ -1,6 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Hospitalization;
+use App\Patient;
+use App\Room;
+use App\Nurse;
+use App\Procedure;
+
 
 use Illuminate\Http\Request;
 
@@ -13,6 +19,8 @@ class HospitalizationsController extends Controller
      */
     public function index()
     {
+        $hospitalizations = Hospitalization::paginate(5);
+        return view('hospitalizations.index', compact('hospitalizations','rooms','nurses','patients','procedures'));
         //
     }
 
@@ -23,6 +31,11 @@ class HospitalizationsController extends Controller
      */
     public function create()
     {
+        $pacientes = Patient::all();
+        $enfermeras = Nurse::all();
+        $habitaciones = Room::all();
+        $procedimientos = Procedure::all();
+        return view('hospitalizations.create', compact('especialidades','enfermeras','habitaciones','procedimientos','pacientes'));
         //
     }
 

@@ -1,27 +1,29 @@
 @extends('layout.admin.admin')
 
 @section('contenido')
-	<h2 style="display: inline-block;"><small>Detalle de Transacciones</small></h2><a href="/detalletransacciones/crear" class="btn btn-success btn-sm pull-right" >Nuevo registro</a>
+	<h2 style="display: inline-block;"><small>Transacciones</small></h2><a href="/transacciones/crear" class="btn btn-success btn-sm pull-right" >Nuevo registro</a>
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>nit</th>
-				<th>Nombre</th>
-				<th>Telefono</th>
-				<th>Dirección</th>
+				<th>Tipo de Transacción</th>
+				<th>Cantidad</th>
+				<th>Detalle de transacción</th>
+				<th>Suministro</th>
+                <th>Fecha</th>
 				<th>Acciones</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($transaction_details as $transaction_detail)
+			@foreach($transactions as $transaction)
 				<tr>
-					<td width="20px">{{ $transaction_detail->id }}</td>
-					<td>{{ $transaction_detail->nit }}</td>
-					<td>{{ $transaction_detail->name }}</td>
-					<td>{{ $transaction_detail->phone }}</td>
-					<td>{{ $transaction_detail->address }}</td>
-					<td width="120px">
+					<td width="20px">{{ $transaction->id }}</td>
+					<td>{{ $transaction->Type->name }}</td>
+					<td>{{ $transaction->quantitu }}</td>
+					<td>{{ $transaction->Detail->name }}</td>
+					<td>{{ $transaction->Supply->name }}</td>
+					<td>{{ $transaction->date }}</td>
+					{{--  <td width="120px">
 						<a href="#" class="btn btn-primary btn-xs">
 							<i class="fa fa-user-md" aria-hidden="true"></i>
 						</a>
@@ -32,7 +34,7 @@
                         	{{ csrf_field() }}
                         	{{ method_field('DELETE') }}
                         	<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                        </form>                       
+                        </form>                         --}}
 				</tr>
 			@endforeach
 		</tbody>

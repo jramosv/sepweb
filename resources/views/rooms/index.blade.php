@@ -5,34 +5,33 @@
         {{ session('status') }}
     </div>
 @endif
-	<h2 style="display: inline-block;"><small>Enfermeras</small></h2><a href="/enfermeras/crear" class="btn btn-success btn-sm pull-right" >Nuevo enfermero</a>
+	<h2 style="display: inline-block;"><small>Habitaciones</small></h2><a href="/habitaciones/crear" class="btn btn-success btn-sm pull-right" >Nueva Habitacion</a>
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 			<tr>
 				<th>#</th>
 				<th>Nombre</th>
-				<th>Telefono</th>
-				<th>Direccion</th>
+				<th>Cama</th>
 				<th>Acciones</th>
+
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($nurses as $nurse)
+			@foreach($rooms as $room)
 				<tr>
-					<td width="20px">{{ $nurse->id }}</td>
-					<td>{{ $nurse->first_name . ' ' . $nurse->last_name }}</td>
-					<td>{{ $nurse->phone }}</td>
-					<td>{{ $nurse->address }}</td>
-
+					<td width="20px">{{ $room->id }}</td>
+					<td>{{ $room->name }}</td>
+					<td>{{ $room->bed }}</td>
+					
 					<td width="122px">
 					<a href="#" class="btn btn-primary btn-xs" onclick="event.preventDefault();
-								alert('TODO: Aqui se mostrara el historial clinico de la enfermera.');">
+								alert('TODO: Aqui se mostrara el historial de las habitaciones.');">
 						<i class="fa fa-user-md" aria-hidden="true"></i>
 					</a>
-					<a href="/enfermeras/{{ $nurse->id }}" class="btn btn-warning btn-xs">
+					<a href="/habitaciones/{{ $room->id }}" class="btn btn-warning btn-xs">
 						<i class="fa fa-pencil" aria-hidden="true"></i>
 					</a>
-					<form id="delete-form"  action="{{ action('NursesController@destroy', ['nurse' => $nurse ])}}" method="POST" style="display: inline;">
+					<form id="delete-form"  action="{{ action('RoomsController@destroy', ['room' => $room ])}}" method="POST" style="display: inline;">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -42,5 +41,5 @@
 		@endforeach
 	</tbody>
 </table>
-{!! $nurses->render() !!}
+{!! $rooms->render() !!}
 @endsection
