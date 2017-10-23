@@ -29,7 +29,7 @@ Route::get('/detalletransacciones', 'TransactionDetailsController@index');
 Route::get('/detalletransacciones/crear', 'TransactionDetailsController@create');
 Route::post('/detalletransacciones', 'TransactionDetailsController@store');
 Route::get('/detalletransacciones/{id}', 'TransactionDetailsController@edit');
-Route::put('/detalletransacciones/{transaction_detail}', 'TransactionDetailsController@update');
+Route::put('/detalletransacciones/{patient}', 'TransactionDetailsController@update');
 Route::delete('/detalletransacciones/{transaction_detail}', 'TransactionDetailsController@destroy');
 
 Route::get('/suministros', 'SuppliesController@index');
@@ -57,14 +57,12 @@ Route::get('/especialidades/{id}', 'SpecialtiesController@edit');
 Route::put('/especialidades/{specialty}', 'SpecialtiesController@update');
 Route::delete('/especialidades/{specialty}', 'SpecialtiesController@destroy');
 
+
+
+
 Route::get('/habitaciones', 'RoomsController@index');
 Route::get('/habitaciones/crear', 'RoomsController@create');
 Route::post('/habitaciones', 'RoomsController@store');
 Route::get('/habitaciones/{id}', 'RoomsController@edit');
 Route::put('/habitaciones/{room}', 'RoomsController@update');
 Route::delete('/habitaciones/{room}', 'RoomsController@destroy');
-
-Route::get('/hospitalizaciones', 'HospitalizationsController@index');
-Route::get('/hospitalizaciones/crear', 'HospitalizationsController@create');
-Route::post('/hospitalizaciones', 'HospitalizationsController@store');
-
