@@ -14,8 +14,8 @@ class TransactionDetailsController extends Controller
      */
     public function index()
     {
-        $transaction_details = TransactionDetail::all();
-        return view('transaction_details.index', compact('transaction_details'));
+        $transactions = Transaction::all();
+        return view('transactions.index', compact('transactions'));
     }
 
     /**

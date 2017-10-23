@@ -9,7 +9,7 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.sebweb.dev" class="simple-text">
+                <a href="http://sebweb.dev" class="simple-text">
                     SEPWEB
                 </a>
             </div>

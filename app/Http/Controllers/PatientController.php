@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use PDF;
 use App\Patient;
 use App\BloodType;
+use Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
 use App\Http\Requests\PatientsFormRequest;
 
@@ -17,12 +20,37 @@ class PatientController extends Controller
     public function index()
     {
 
-        $patients = Patient::paginate(5);
-        return view('patients.index', compact('tipos_sangre', 'patients'));
+        return view('patients.index');
 
         //
     }
 
+    public function getPatientsData()
+    {
+
+        $patients = DB::table('patients')
+           ->join('blood_types', 'patients.blood_types_id', '=', 'blood_types.id')
+           ->select('patients.id', 
+            'patients.first_name',
+            'patients.last_name',
+            'patients.address',
+            'patients.phone',
+            'patients.sex',
+            'patients.email',
+            'blood_types.type'
+        )->get();
+
+        return datatables($patients)->toJson();
+
+    }
+
+    public function listarPacientesPdf(){
+        
+        $pacientes = Patient::all();
+        view()->share('pacientes',$pacientes);
+        $pdf = PDF::loadView('patients.reports.report_all');
+        return $pdf->download('allPatients.pdf');
+    }
     /**
      * Show the form for creating a new resource.
      *

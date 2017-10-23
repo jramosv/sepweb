@@ -19,6 +19,8 @@ Route::get('/pacientes', 'PatientController@index');
 Route::get('/pacientes/crear', 'PatientController@create');
 Route::post('/pacientes', 'PatientController@store');
 Route::get('/pacientes/{id}', 'PatientController@edit');
+Route::get('/pacientes_lista', 'PatientController@getPatientsData');
+Route::get('/pacientes_todos_pdf', 'PatientController@listarPacientesPdf');
 Route::put('/pacientes/{patient}', 'PatientController@update');
 Route::delete('/pacientes/{patient}', 'PatientController@destroy');
 
@@ -35,6 +37,9 @@ Route::delete('/detalletransacciones/{transaction_detail}', 'TransactionDetailsC
 Route::get('/suministros', 'SuppliesController@index');
 Route::get('/suministros/crear', 'SuppliesController@create');
 Route::post('/suministros', 'SuppliesController@store');
+Route::get('/suministros/{id}', 'SuppliesController@edit');
+Route::put('/suministros/{supply}', 'SuppliesController@update');
+Route::delete('/suministros/{supply}', 'SuppliesController@destroy');
 
 Route::get('/enfermeras', 'NursesController@index');
 Route::get('/enfermeras/crear', 'NursesController@create');
@@ -66,3 +71,17 @@ Route::post('/habitaciones', 'RoomsController@store');
 Route::get('/habitaciones/{id}', 'RoomsController@edit');
 Route::put('/habitaciones/{room}', 'RoomsController@update');
 Route::delete('/habitaciones/{room}', 'RoomsController@destroy');
+<<<<<<< HEAD
+=======
+
+Route::get('/hospitalizaciones', 'HospitalizationsController@index');
+Route::get('/hospitalizaciones/crear', 'HospitalizationsController@create');
+Route::post('/hospitalizaciones', 'HospitalizationsController@store');
+
+Route::get('/transacciones', 'TransactionsController@index');
+Route::get('/transacciones/crear', 'TransactionsController@create');
+Route::post('/transacciones', 'TransactionsController@store');
+Route::get('/transacciones/{id}', 'TransactionsController@edit');
+Route::put('/transacciones/{transaction}', 'TransactionsController@update');
+Route::delete('/transacciones/{transaction}', 'TransactionsController@destroy');
+>>>>>>> fef375ef65a0fc6bdf31b5072c1134617ef56087
