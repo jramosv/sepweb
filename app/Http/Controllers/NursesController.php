@@ -39,6 +39,13 @@ class NursesController extends Controller
         return datatables($nurses)->toJson();
     }
     
+    public function listarNursesPdf(){
+        
+        $nurses = Nurse::all();
+        view()->share('enfermera',$enfermera);
+        $pdf = PDF::loadView('nurses.reports.report_all');
+        return $pdf->download('allNurses.pdf');
+    }
     /**
      * Show the form for creating a new resource.
      *

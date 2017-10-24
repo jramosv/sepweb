@@ -46,9 +46,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/habitaciones">
+                    <a href="/prescripciones">
                         <i class="pe-7s-map-marker"></i>
-                        <p>Habitaciones</p>
+                        <p>Prescripciones</p>
                     </a>
                 </li>
                 <li>

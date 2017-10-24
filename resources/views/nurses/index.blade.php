@@ -6,7 +6,7 @@
         {{ session('status') }}
     </div>
 @endif
-	<h2 style="display: inline-block;"><small>Enfermeras</small></h2><a href="/enfermeras/crear" class="btn btn-success btn-sm pull-right" ><i class="fa fa-plus" aria-hidden="true"></i> Nuevas Enfermeras</a> <a href="/pacientes_todos_pdf" class="btn btn-danger btn-sm pull-right" ><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Listado de Enfermeras... </a>
+	<h2 style="display: inline-block;"><small>Enfermeras</small></h2><a href="/enfermeras/crear" class="btn btn-success btn-sm pull-right" ><i class="fa fa-plus" aria-hidden="true"></i> Nuevas Enfermeras</a> <a href="/enfermera_todos_pdf" class="btn btn-danger btn-sm pull-right" ><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Listado de Enfermeras... </a>
 		<table id="nurses-table" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>

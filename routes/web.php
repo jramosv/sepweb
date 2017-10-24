@@ -79,3 +79,10 @@ Route::post('/transacciones', 'TransactionsController@store');
 Route::get('/transacciones/{id}', 'TransactionsController@edit');
 Route::put('/transacciones/{transaction}', 'TransactionsController@update');
 Route::delete('/transacciones/{transaction}', 'TransactionsController@destroy');
+
+Route::get('/prescripciones', 'PrescriptionsController@index');
+Route::get('/prescripciones/crear', 'PrescriptionsController@create');
+Route::post('/prescripciones', 'PrescriptionsController@store');
+Route::get('/prescripciones/{id}', 'PrescriptionsController@edit');
+Route::put('/prescripciones/{prescription}', 'PrescriptionsController@update');
+Route::delete('/prescripciones/{prescription}', 'PrescriptionsController@destroy');
