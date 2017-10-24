@@ -79,3 +79,13 @@ Route::post('/transacciones', 'TransactionsController@store');
 Route::get('/transacciones/{id}', 'TransactionsController@edit');
 Route::put('/transacciones/{transaction}', 'TransactionsController@update');
 Route::delete('/transacciones/{transaction}', 'TransactionsController@destroy');
+
+
+Route::get('/citas', 'MedicalAppointmentsController@index');
+Route::get('/citas/crear', 'MedicalAppointmentsController@create');
+Route::post('/citas', 'MedicalAppointmentsController@store');
+Route::get('/citas/{id}', 'MedicalAppointmentsController@edit');
+Route::get('/citas_lista', 'MedicalAppointmentsController@getMedicalAppointmentData');
+Route::get('/citas_todas_pdf', 'MedicalAppointmentsController@listarCitasPdf');
+Route::put('/citas/{medical_appointment}', 'MedicalAppointmentsController@update');
+Route::delete('/citas/{medical_appointment}', 'MedicalAppointmentsController@destroy');
