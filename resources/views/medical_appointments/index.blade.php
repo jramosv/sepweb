@@ -62,7 +62,7 @@
             { "data": "last_name" },
             { "data": "last_name" },
             { "data": "status_name" },
-	            "data": null,
+	         {   "data": null,
 	            "className": "enlace",
 	            "defaultContent": null,
                 "render": function(data,type,row,meta) {

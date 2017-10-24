@@ -47,6 +47,8 @@ Route::post('/enfermeras', 'NursesController@store');
 Route::get('/enfermeras/{id}', 'NursesController@edit');
 Route::put('/enfermeras/{nurse}', 'NursesController@update');
 Route::delete('/enfermeras/{nurse}', 'NursesController@destroy');
+Route::get('/enfermeras_lista', 'NursesController@getNursesData');
+
 
 Route::get('/doctores', 'DoctorsController@index');
 Route::get('/doctores/crear', 'DoctorsController@create');
