@@ -40,9 +40,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/historial">
+                    <a href="/enfermeras">
                         <i class="pe-7s-science"></i>
-                        <p>Historial</p>
+                        <p>Enfermera</p>
                     </a>
                 </li>
                 <li>
