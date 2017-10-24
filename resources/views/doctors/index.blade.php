@@ -1,13 +1,15 @@
 @extends('layout.admin.admin')
 @section('titulo', 'Doctores')
 @section('contenido')
+
+
 @if (session('status'))
     <div class="alert alert-info">
         {{ session('status') }}
     </div>
 @endif
 	<h2 style="display: inline-block;"><small>Doctores</small></h2><a href="/doctores/crear" class="btn btn-success btn-sm pull-right" ><i class="fa fa-plus" aria-hidden="true"></i> Nuevo doctor</a>
-	<table class="table table-hover table-bordered table-striped">
+	<table class="table table-hover table-bordered table-striped" id='doctorstbl'>
 		<thead>
 			<tr>
 				<th>#</th>
@@ -46,4 +48,6 @@
 	</tbody>
 </table>
 {!! $doctors->render() !!}
+
+
 @endsection
