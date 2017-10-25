@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use PDF;
 use App\Nurse;
+use Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
 use App\Http\Requests\NursesFormRequest;
 
@@ -21,6 +24,28 @@ class NursesController extends Controller
         //
     }
 
+    public function getNursesData()
+    {
+
+        $nurses = DB::table('nurses')
+        //    ->join('blood_types', 'patients.blood_types_id', '=', 'blood_types.id')
+           ->select('nurses.id', 
+            'nurses.first_name',
+            'nurses.last_name',
+            'nurses.phone',
+            'nurses.address'
+        )->get();
+
+        return datatables($nurses)->toJson();
+    }
+    
+    public function listarNursesPdf(){
+        
+        $nurses = Nurse::all();
+        view()->share('enfermera',$enfermera);
+        $pdf = PDF::loadView('nurses.reports.report_all');
+        return $pdf->download('allNurses.pdf');
+    }
     /**
      * Show the form for creating a new resource.
      *
