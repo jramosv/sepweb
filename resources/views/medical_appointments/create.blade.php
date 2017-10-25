@@ -30,7 +30,7 @@
 			<select name="patient_id" class="form-control" >
 				<option value="0">[ Seleccione un Paciente ]</option>
 				@foreach($pacientes as $item)
-					<option value= {{ $item->id }} {{ (old('patient_id') == $item->id ?'selected' : '') }} > {{ $item->id }} </option>
+					<option value= {{ $item->id }} {{ (old('patient_id') == $item->id ?'selected' : '') }} > {{ $item->first_name.' '.$item->last_name }} </option>
 				@endforeach
 			</select>
 			@if( $errors->has('patient_id'))
@@ -46,7 +46,7 @@
 			<select name="doctor_id" class="form-control" >
 				<option value="0">[ Seleccione un Doctor ]</option>
 				@foreach($doctores as $item)
-					<option value= {{ $item->id }} {{ (old('doctor_id') == $item->id ?'selected' : '') }} > {{ $item->id }} </option>
+					<option value= {{ $item->id }} {{ (old('doctor_id') == $item->id ?'selected' : '') }} > {{ $item->first_name.' '.$item->last_name }} </option>
 				@endforeach
 			</select>
 			@if( $errors->has('doctor_id'))
@@ -61,7 +61,7 @@
 			<select name="appointment_status_id" class="form-control" >
 				<option value="0">[ Seleccione un Estado ]</option>
 				@foreach($estados_cita as $item)
-					<option value= {{ $item->id }} {{ (old('appointment_status_id') == $item->id ?'selected' : '') }} > {{ $item->id }} </option>
+					<option value= {{ $item->id }} {{ (old('appointment_status_id') == $item->id ?'selected' : '') }} > {{ $item->status_name }} </option>
 				@endforeach
 			</select>
 			@if( $errors->has('appointment_status_id'))
