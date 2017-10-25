@@ -6,6 +6,7 @@ use App\Patient;
 use App\Room;
 use App\Nurse;
 use App\Procedure;
+use App\Http\Requests\HospitalizationsFormRequest;
 
 
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class HospitalizationsController extends Controller
     public function index()
     {
         $hospitalizations = Hospitalization::paginate(5);
-        return view('hospitalizations.index', compact('hospitalizations','rooms','nurses','patients','procedures'));
+        return view('hospitalizations.index', compact('hospitalizations','Room','Nurse','Patient','Procedure'));
         //
     }
 
@@ -45,8 +46,18 @@ class HospitalizationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HospitalizationsFormRequest $request)
     {
+        $hospitalization = new Hospitalization();
+        $hospitalization->patient_id = $request->patient_id;
+        $hospitalization->nurse_id = $request->nurse_id;
+        $hospitalization->procedure_id = $request->procedure_id;
+        $hospitalization->room_id = $request->room_id;
+        $hospitalization->input = $request->input;
+        $hospitalization->output = $request->output;
+        
+        $hospitalization->save();
+        return redirect('/hospitalizaciones')->with('status', 'El registro se creo correctamente!');
         //
     }
 
@@ -69,6 +80,12 @@ class HospitalizationsController extends Controller
      */
     public function edit($id)
     {
+        $hospitalzations = Hospitalization::find($id);
+        $pacientes = Patient::all();
+        $enfermeras = Nurse::all();
+        $habitaciones = Room::all();
+        $procedimientos = Procedure::all();
+        return view('hospitalizations.edit', compact('hospitalizations','habitaciones','enfermeras','pacientes','Procedimientps'));
         //
     }
 
@@ -79,8 +96,21 @@ class HospitalizationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(HosptitalizationsFormRequest $request, Hospitalization  $hospitalization)
     {
+        $patient->update(
+            $request->only(
+                [
+                    'input',
+                    'output',
+                    'nurse_id',
+                    'patient_id',
+                    'room_id', 
+                    'procedures_id',
+                ]
+            ));
+        return redirect('/hospitalizaciones')->with('status', 'La Hospitalizacion se actualizo correctamente!');
+    
         //
     }
 
