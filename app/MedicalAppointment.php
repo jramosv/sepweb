@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class MedicalAppointment extends Model
 {
-    protected $fillable = ['date','time','appointment_id','appointment_status_id','doctor_id','patient_id'];
+    protected $fillable = ['date','time','appointment_status_id','doctor_id','patient_id'];
 
 public function diagnostico()
 {
-    return $this->hasMany('App\MedicalDiagnostic','appointment_id','id');
+    return $this->hasMany('App\MedicalDiagnostic','medical_appointment_id','id');
 }
 public function estadoCita()
 {

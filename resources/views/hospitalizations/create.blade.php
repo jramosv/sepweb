@@ -87,17 +87,22 @@
             </span>
         @endif
     </div>
-        <div class=" {{ $errors->has('procedure_id') ? 'has-error' : '' }}">
-        <div class="col-xs-10">
-			<label for="procedure_id">Razon</label>
-            <textarea name="procedure_id" class="form-control" rows="3" placeholder="Causa" value="{{ old('procedure_id') }}" /> </textarea>
-			@if( $errors->has('procedure_id'))
-				<span class="help-block">
-					<strong>{{ $errors->first('procedure_id') }}</strong>
-				</span>
-			@endif
-		</div>
+    <div class=" {{ $errors->has('procedure_id') ? 'has-error' : '' }}">
+    <div class="col-xs-10">
+        <label for="procedure_id">Habitacion</label>
+        <select name="procedure_id" class="form-control" >
+            <option value="0">[ Seleccione una razon ]</option>
+            @foreach($procedimientos as $item)
+                <option value= {{ $item->id }} {{ (old('procedure_id') == $item->id ?'selected' : '') }} > {{ $item->reason }} </option>
+            @endforeach
+        </select>
         </div>
+        @if( $errors->has('procedure_id'))
+            <span class="help-block">
+                <strong>{{ $errors->first('procedure_id') }}</strong>
+            </span>
+        @endif
+    </div>
 
         
 		<div class="col-xs-10">

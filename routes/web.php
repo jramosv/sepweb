@@ -51,6 +51,8 @@ Route::post('/enfermeras', 'NursesController@store');
 Route::get('/enfermeras/{id}', 'NursesController@edit');
 Route::put('/enfermeras/{nurse}', 'NursesController@update');
 Route::delete('/enfermeras/{nurse}', 'NursesController@destroy');
+Route::get('/enfermeras_lista', 'NursesController@getNursesData');
+
 
 Route::get('/doctores', 'DoctorsController@index');
 Route::get('/doctores/crear', 'DoctorsController@create');
@@ -66,9 +68,6 @@ Route::get('/especialidades/{id}', 'SpecialtiesController@edit');
 Route::put('/especialidades/{specialty}', 'SpecialtiesController@update');
 Route::delete('/especialidades/{specialty}', 'SpecialtiesController@destroy');
 
-
-
-
 Route::get('/habitaciones', 'RoomsController@index');
 Route::get('/habitaciones/crear', 'RoomsController@create');
 Route::post('/habitaciones', 'RoomsController@store');
@@ -79,6 +78,9 @@ Route::delete('/habitaciones/{room}', 'RoomsController@destroy');
 Route::get('/hospitalizaciones', 'HospitalizationsController@index');
 Route::get('/hospitalizaciones/crear', 'HospitalizationsController@create');
 Route::post('/hospitalizaciones', 'HospitalizationsController@store');
+Route::get('/hospitalizaciones/{id}', 'HospitalizationsController@edit');
+Route::put('/hospitalizaciones/{hospitalization}', 'HospitalizationsController@update');
+Route::delete('/hospitalizaciones/{hospitalization}', 'HospitalizationsController@destroy');
 
 Route::get('/transacciones', 'TransactionsController@index');
 Route::get('/transacciones/crear', 'TransactionsController@create');
@@ -87,3 +89,18 @@ Route::get('/transacciones/{id}', 'TransactionsController@edit');
 Route::put('/transacciones/{transaction}', 'TransactionsController@update');
 Route::delete('/transacciones/{transaction}', 'TransactionsController@destroy');
 
+Route::get('/citas', 'MedicalAppointmentsController@index');
+Route::get('/citas/crear', 'MedicalAppointmentsController@create');
+Route::post('/citas', 'MedicalAppointmentsController@store');
+Route::get('/citas/{id}', 'MedicalAppointmentsController@edit');
+Route::get('/citas_lista', 'MedicalAppointmentsController@getMedicalAppointmentData');
+Route::get('/citas_todas_pdf', 'MedicalAppointmentsController@listarCitasPdf');
+Route::put('/citas/{medical_appointment}', 'MedicalAppointmentsController@update');
+Route::delete('/citas/{medical_appointment}', 'MedicalAppointmentsController@destroy');
+
+Route::get('/prescripciones', 'PrescriptionsController@index');
+Route::get('/prescripciones/crear', 'PrescriptionsController@create');
+Route::post('/prescripciones', 'PrescriptionsController@store');
+Route::get('/prescripciones/{id}', 'PrescriptionsController@edit');
+Route::put('/prescripciones/{prescription}', 'PrescriptionsController@update');
+Route::delete('/prescripciones/{prescription}', 'PrescriptionsController@destroy');
