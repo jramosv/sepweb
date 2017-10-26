@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('layout.admin.admin');
 });
 
+Route::middleware(['api', 'cors'])->group(function () {
+    Route::delete('/pacientes/{patient}', 'PatientController@destroy');
+
+});
+
 Route::get('/pacientes', 'PatientController@index');
 Route::get('/pacientes/crear', 'PatientController@create');
 Route::post('/pacientes', 'PatientController@store');
@@ -22,7 +27,6 @@ Route::get('/pacientes/{id}', 'PatientController@edit');
 Route::get('/pacientes_lista', 'PatientController@getPatientsData');
 Route::get('/pacientes_todos_pdf', 'PatientController@listarPacientesPdf');
 Route::put('/pacientes/{patient}', 'PatientController@update');
-Route::delete('/pacientes/{patient}', 'PatientController@destroy');
 
 
 Route::get('/transacciones', 'TransactionsController@index');
@@ -71,8 +75,6 @@ Route::post('/habitaciones', 'RoomsController@store');
 Route::get('/habitaciones/{id}', 'RoomsController@edit');
 Route::put('/habitaciones/{room}', 'RoomsController@update');
 Route::delete('/habitaciones/{room}', 'RoomsController@destroy');
-<<<<<<< HEAD
-=======
 
 Route::get('/hospitalizaciones', 'HospitalizationsController@index');
 Route::get('/hospitalizaciones/crear', 'HospitalizationsController@create');
@@ -84,4 +86,4 @@ Route::post('/transacciones', 'TransactionsController@store');
 Route::get('/transacciones/{id}', 'TransactionsController@edit');
 Route::put('/transacciones/{transaction}', 'TransactionsController@update');
 Route::delete('/transacciones/{transaction}', 'TransactionsController@destroy');
->>>>>>> fef375ef65a0fc6bdf31b5072c1134617ef56087
+

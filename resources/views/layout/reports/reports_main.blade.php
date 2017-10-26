@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-	<title>Reporte | @yield('titulo')</title>
-
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
-
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Reporte - @yield('titulo')</title>
 
     <!-- Bootstrap core CSS     -->
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" />
