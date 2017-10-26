@@ -2,6 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use PDF;
+use App\MedicalAppointment;
+use App\MedicalDiagnostic;
+use App\Patient;
+use Yajra\Datatables\Datatables;
+
 use Illuminate\Http\Request;
 
 class MedicalDiagnosticsController extends Controller
@@ -13,9 +20,35 @@ class MedicalDiagnosticsController extends Controller
      */
     public function index()
     {
-        //
+        return view('medical_diagnostics.index');
     }
 
+    public function getMedicalDiagnosticsData()
+    {
+
+        $medical_diagnostics = DB::table('medical_diagnostics')
+           ->join('medical_appointments', 'medical_diagnostics.medical_appointment_id', '=', 'medical_appointments.id')
+           ->join('patients', 'medical_diagnostics.patient_id', '=', 'patients.id')
+           ->select('medical_diagnostics.id', 
+            'medical_appointments.id',
+            'patients.last_name',
+            'medical_diagnostics.symptom',
+            // 'medical_diagnostics.treatment',
+            'medical_diagnostics.diagnosis'     
+        )->get();
+
+        return datatables($medical_diagnostics)->toJson();
+
+    }
+
+    
+    public function listarDiagnosticosPdf(){
+        
+        $diagnosticos = MedicalDiagnostic::all();
+        view()->share('diagnosticos',$diagnosticos);
+        $pdf = PDF::loadView('medical_diagnostics.reports.report_all');
+        return $pdf->download('allAppointments.pdf');
+    }
     /**
      * Show the form for creating a new resource.
      *

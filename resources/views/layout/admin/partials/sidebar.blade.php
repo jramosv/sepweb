@@ -52,9 +52,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/farmacia">
+                    <a href="/diagnosticos">
                         <i class="pe-7s-bell"></i>
-                        <p>Farmacia</p>
+                        <p>Diagnostico Medico</p>
                     </a>
                 </li>
 				<li class="active-pro">

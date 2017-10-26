@@ -48,6 +48,7 @@ Route::get('/enfermeras/{id}', 'NursesController@edit');
 Route::put('/enfermeras/{nurse}', 'NursesController@update');
 Route::delete('/enfermeras/{nurse}', 'NursesController@destroy');
 Route::get('/enfermeras_lista', 'NursesController@getNursesData');
+Route::get('/enfermeras_todos_pdf', 'NursesController@listarEnfermerasPdf');
 
 
 Route::get('/doctores', 'DoctorsController@index');
@@ -97,3 +98,12 @@ Route::post('/prescripciones', 'PrescriptionsController@store');
 Route::get('/prescripciones/{id}', 'PrescriptionsController@edit');
 Route::put('/prescripciones/{prescription}', 'PrescriptionsController@update');
 Route::delete('/prescripciones/{prescription}', 'PrescriptionsController@destroy');
+
+Route::get('/diagnosticos', 'MedicalDiagnosticsController@index');
+Route::get('/diagnosticos/crear', 'MedicalDiagnosticsController@create');
+Route::post('/diagnosticos', 'MedicalDiagnosticsController@store');
+Route::get('/diagnosticos/{id}', 'MedicalDiagnosticsController@edit');
+Route::get('/diagnosticos_lista', 'MedicalDiagnosticsController@getMedicalDiagnosticsData');
+Route::get('/diagnosticos_todos_pdf', 'MedicalDiagnosticsController@listarDiagnosticosPdf');
+Route::put('/diagnosticos/{Medical_Diagnostic}', 'MedicalDiagnosticsController@update');
+Route::delete('/diagnosticos/{Medical_Diagnostic}', 'MedicalDiagnosticsController@destroy');
