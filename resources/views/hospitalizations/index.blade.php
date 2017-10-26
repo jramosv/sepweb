@@ -24,19 +24,21 @@
 				<tr>
 					<td width="20px">{{ $hospitalization->id }}</td>
 					<td>{{ $hospitalization->input }}</td>
-					<td>{{ $hospitalization->patients }}</td>
-					<td>{{ $hospitalization->rooms }}</td>
-                    <td>{{ $hospitalization->nurses }}</td>
+					<td>{{ $hospitalization->patient_id}}</td>
+					<td>{{ $hospitalization->Room->name }}</td>
+                    <td>{{ $hospitalization->Nurse->first_name }}</td>
+					<td>{{ $hospitalization->output }}</td>
+					<td>{{ $hospitalization->procedure->reason }}</td>
 
 					<td width="122px">
 					<a href="#" class="btn btn-primary btn-xs" onclick="event.preventDefault();
 								alert('TODO: Aqui se mostrara el historial clinico de la enfermera.');">
 						<i class="fa fa-user-md" aria-hidden="true"></i>
 					</a>
-					<a href="/enfermeras/{{ $nurse->id }}" class="btn btn-warning btn-xs">
+					<a href="/hospitalizaciones/{{ $hospitalization->id }}" class="btn btn-warning btn-xs">
 						<i class="fa fa-pencil" aria-hidden="true"></i>
 					</a>
-					<form id="delete-form"  action="{{ action('NursesController@destroy', ['nurse' => $nurse ])}}" method="POST" style="display: inline;">
+					<form id="delete-form"  action="{{ action('HospitalizationsController@destroy', ['hospitalization' => $hospitalization ])}}" method="POST" style="display: inline;">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>

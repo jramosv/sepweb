@@ -35,8 +35,10 @@ class MedicalAppointmentsController extends Controller
            ->select('medical_appointments.id', 
             'medical_appointments.date',
             'medical_appointments.time',
-            'patients.id',
-            'doctors.id',
+            'patients.first_name as patientname',
+            'patients.last_name as patientlast',
+            'doctors.first_name as doctorname',
+            'doctors.last_name as doctorlast',
             'appointment_statuses.status_name'
         )->get();
 

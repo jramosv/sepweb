@@ -129,9 +129,15 @@ class PatientController extends Controller
      * @param  \App\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Patient $patient)
-    {
-        $patient->delete();
-        return redirect('/pacientes')->with('status', 'El paciente se elimino de forma permanente!');
-    }
+    public function destroy(Request $request, $id)
+{
+
+    if($request->ajax()):
+            $patient = \App\Patient::find($request->$id);
+            $patient->delete();
+    endif;
+
+    return redirect()->to('/pacientes');
+
+}
 }

@@ -59,8 +59,10 @@
             { "data": "id" },
             { "data": "date" },
             { "data": "time" },
-            { "data": "last_name" },
-            { "data": "last_name" },
+			{ "data": function (data, type, dataToSet) {
+             return data.patientname + "<br/>" + data.patientlast;}},
+			 { "data": function (data, type, dataToSet) {
+             return data.doctorname + "<br/>" + data.doctorlast;}},
             { "data": "status_name" },
 	         {   "data": null,
 	            "className": "enlace",

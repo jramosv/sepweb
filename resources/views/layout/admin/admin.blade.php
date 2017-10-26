@@ -24,7 +24,8 @@
     <link href="{{ asset('/css/buttons.dataTables.min.css') }}" rel="stylesheet"/>
     
 
-    <link rel="stylesheet" href="{{ asset('/css/sweetalert.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/alertify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/semantic.min.css') }}">
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="{{ asset('/css/demo.css') }}" rel="stylesheet" />
 
@@ -133,11 +134,9 @@
     <script src="{{ asset('/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('/js/buttons.print.min.js') }}"></script>
 
-    <script src="{{ asset('/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('/js/alertify.min.js') }}"></script>
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="{{ asset('/js/demo.js') }}"></script>
-
-    @include('sweet::alert')
 
 	@yield('script')
 
