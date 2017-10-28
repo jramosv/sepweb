@@ -20,7 +20,7 @@ class CreateMedicalDiagnosticsTable extends Migration
             $table->integer('patient_id')->unsigned();
             $table->foreign('patient_id')->references('id')->on('patients');
             $table->string('symptom',200);
-            $table->string('treatment',200);
+            // $table->string('treatment',200);
             $table->string('diagnosis',200);
             $table->timestamps();
             
