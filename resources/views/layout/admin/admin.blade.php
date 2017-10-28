@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width" />
 
 
+
     <!-- Bootstrap core CSS     -->
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" />
 
@@ -39,11 +40,12 @@
 </head>
 <body>
 
+
     <div class="wrapper">
             @include('layout.admin.partials.sidebar')
 
             <div class="main-panel">
-                <nav class="navbar navbar-default navbar-fixed">
+                <nav class="navbar navbar-default navbar-fixed" style="background-color: #E3F2FD;">
                     <div class="container-fluid">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
@@ -95,7 +97,7 @@
                 </div>
 
                 <p class="copyright pull-right">
-                    &copy; 2017 <a href="http://www.csepweb.dev">Kevin Fajardo</a>, made with love for a José Villeda & Karen Gonzales
+                    &copy; 2017 <a href="http://sepweb.dev">Made with <3</a>,  for  José Villeda, Karen Gonzales, Kevin Fajardo & Eddy Eleazar
                 </p>
             </div>
         </footer>

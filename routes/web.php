@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('layout.admin.admin');
 });
 
@@ -100,3 +100,7 @@ Route::post('/prescripciones', 'PrescriptionsController@store');
 Route::get('/prescripciones/{id}', 'PrescriptionsController@edit');
 Route::put('/prescripciones/{prescription}', 'PrescriptionsController@update');
 Route::delete('/prescripciones/{prescription}', 'PrescriptionsController@destroy');
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
