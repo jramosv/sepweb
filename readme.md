@@ -1,4 +1,4 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"> SEPWEB</p>
+<p align="center"><img src="https://github.com/jramosv/sepweb/blob/master/public/img/laravel.png"></p>
 
 <p align="center">Sistema Estadistico de Pacientes</p>
 
