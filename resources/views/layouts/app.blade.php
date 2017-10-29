@@ -12,11 +12,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    
 </head>
 
-<body background="img/slide-02.jpg">
+<body class="bbground">
     <div id="app">
-        <nav class="navbar navbar-light   navbar-static-top" style="background-color: #e3f2fd;">
+        <nav class="navbar navbar-light navbar-static-top" style="background-color: #A7DFF0;">
             <div class="container">
                 <div class="navbar-header">
 

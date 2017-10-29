@@ -1,8 +1,9 @@
+@extends('layouts.app')
 @extends('layout.admin.admin')
 @section('titulo', 'Homepage')
 @section('contenido')
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" align="center" background-color="white">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="azure" data-image="{{ asset('/img/slide-02.jpg')}}">
+<div class="sidebar" data-color="azure" data-image="{{ asset('/img/slide-03.jpg')}}">
 
     <!--
 

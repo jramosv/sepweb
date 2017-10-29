@@ -56,7 +56,8 @@ class MedicalDiagnosticsController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view('medical_diagnostics.create');
     }
 
     /**

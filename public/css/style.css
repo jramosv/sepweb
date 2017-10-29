@@ -5,3 +5,13 @@ div.content > div.container-fluid > h2 {
 div.content {
 	padding: 5px;
 }
+
+.bbground {
+
+	background-image: url("../img/slide-05.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	background-position: center; 
+	background-size: cover;
+
+}

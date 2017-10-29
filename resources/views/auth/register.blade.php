@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Registro</div>
 
-                <div class="panel-body" style="background-color: #e3f2fd;">
+                <div class="panel-body" style="background-color: #A7DFF0;">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
