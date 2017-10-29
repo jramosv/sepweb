@@ -32,7 +32,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('sepweb.dev', 'SEPWEB') }}
+                        {{ config('sepweb.dev', 'SEPWEB') }} { Sistema Estadistico de Pacientes }
                     </a>
                 </div>
 
