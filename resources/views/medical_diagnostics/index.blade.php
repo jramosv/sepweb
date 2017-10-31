@@ -1,5 +1,5 @@
 @extends('layout.admin.admin')
-@section('titulo', 'Enfermera')
+@section('titulo', 'Diagnostico Medico')
 @section('contenido')
 @if (session('status'))
     <div class="alert alert-info">
@@ -14,6 +14,7 @@
 				<th>Cita</th>
                 <th>Nombre del paciente</th>
 				<th>Sintoma</th>
+                <th>prescripcion</th>
                 <th>Diagnostico</th>
 				<th>Acciones</th>
 			</tr>
@@ -24,6 +25,7 @@
                 <th>Cita</th>
                 <th>Nombre del paciente</th>
 				<th>Sintoma</th>
+                <th>prescripcion</th>
                 <th>Diagnostico</th>
 				<th>Acciones</th>
                 </tr>
@@ -58,7 +60,9 @@
             { "data": "id" },
             { "data": "id" },
             { "data": "last_name" },
+            { "data": "id" },
             { "data": "symptom" },
+            { "data": "id" },            
             { "data": "diagnosis" },
         	{
 	            "data": null,

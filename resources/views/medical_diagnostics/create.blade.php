@@ -1,26 +1,46 @@
 @extends('layout.admin.admin')
-@section('titulo', 'Crear paciente')
+@section('titulo', 'Crear Diagnostico')
 @section('contenido')
 	<h4>Crear Diagnostico</h4>
 
-	<form method="POST" action="/citas">
+	<form method="POST" action="/diagnisticos">
 		{{ csrf_field() }}
-		<div class="form-group {{ $errors->has('date') ? 'has-error' : '' }}">
-			<label for="date">Fecha de cita</label>
-			<input type="date" name="date" class="form-control" value="{{ old('date') }}" placeholder="Fecha de Cita" autofocus />
-			@if( $errors->has('date'))
+		<div class="form-group {{ $errors->has('medical_appointment_id') ? 'has-error' : '' }}">
+					<label for="medical_appointment_id">Cita</label>
+					<select name="medical_appointment_id" class="form-control" >
+						<option value="0">[ Seleccione una Cita ]</option>
+						@foreach($citas as $item)
+							<option value= {{ $item->id }} {{ (old('medical_appointment_id') == $item->id ?'selected' : '') }} > {{ $item->id }} </option>
+						@endforeach
+					</select>
+					@if( $errors->has('medical_appointment_id'))
+						<span class="help-block">
+							<strong>{{ $errors->first('medical_appointment_id') }}</strong>
+						</span>
+					@endif
+				</div>
+
+		<div class="form-group {{ $errors->has('patient_id') ? 'has-error' : '' }}">
+			<label for="patient_id">Paciente</label>
+			<select name="patient_id" class="form-control" >
+				<option value="0">[ Seleccione un Paciente ]</option>
+				@foreach($pacientes as $item)
+					<option value= {{ $item->id }} {{ (old('patient_id') == $item->id ?'selected' : '') }} > {{ $item->id }} </option>
+				@endforeach
+			</select>
+			@if( $errors->has('patient_id'))
 				<span class="help-block">
-					<strong>{{ $errors->first('date') }}</strong>
+					<strong>{{ $errors->first('patient_id') }}</strong>
 				</span>
 			@endif
 		</div>
-
-		<div class="form-group {{ $errors->has('time') ? 'has-error' : '' }}">
-			<label for="time">Hora</label>
-			<input type="time" name="time" class="form-control" value="{{ old('time') }}" placeholder="Hora de Cita" />
-			@if( $errors->has('time'))
+		
+		<div class="form-group {{ $errors->has('symptom') ? 'has-error' : '' }}">
+			<label for="symptom">Hora</label>
+			<input type="text" name="symptom" class="form-control" value="{{ old('symptom') }}" placeholder="Hora de Cita" />
+			@if( $errors->has('symptom'))
 				<span class="help-block">
-					<strong>{{ $errors->first('time') }}</strong>
+					<strong>{{ $errors->first('symptom') }}</strong>
 				</span>
 			@endif
 		</div>
@@ -40,37 +60,16 @@
 			@endif
 		</div>
 
-
-		<div class="form-group {{ $errors->has('doctor_id') ? 'has-error' : '' }}">
-			<label for="doctor_id">Doctor</label>
-			<select name="doctor_id" class="form-control" >
-				<option value="0">[ Seleccione un Doctor ]</option>
-				@foreach($doctores as $item)
-					<option value= {{ $item->id }} {{ (old('doctor_id') == $item->id ?'selected' : '') }} > {{ $item->id }} </option>
-				@endforeach
-			</select>
-			@if( $errors->has('doctor_id'))
+		<div class="form-group {{ $errors->has('time') ? 'has-error' : '' }}">
+			<label for="time">Hora</label>
+			<input type="time" name="time" class="form-control" value="{{ old('time') }}" placeholder="Hora de Cita" />
+			@if( $errors->has('time'))
 				<span class="help-block">
-					<strong>{{ $errors->first('doctor_id') }}</strong>
+					<strong>{{ $errors->first('time') }}</strong>
 				</span>
 			@endif
 		</div>
 
-		<div class="form-group {{ $errors->has('appointment_status_id') ? 'has-error' : '' }}">
-			<label for="appointment_status_id">Estado de Cita</label>
-			<select name="appointment_status_id" class="form-control" >
-				<option value="0">[ Seleccione un Estado ]</option>
-				@foreach($estados_cita as $item)
-					<option value= {{ $item->id }} {{ (old('appointment_status_id') == $item->id ?'selected' : '') }} > {{ $item->id }} </option>
-				@endforeach
-			</select>
-			@if( $errors->has('appointment_status_id'))
-				<span class="help-block">
-					<strong>{{ $errors->first('appointment_status_id') }}</strong>
-				</span>
-			@endif
-		</div>
-		
 		<input type="submit" class="btn btn-primary" value="Guardar">
 	</form>
 @endsection

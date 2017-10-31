@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MedicalDiagnostic extends Model
 {
-    protected $fillable = ['id','medical_appointment_id','patient_id','prescription_id','symptom','treatment','diagnosis'];
+    protected $fillable = ['id','medical_appointment_id','patient_id','prescription_id','symptom','diagnosis'];
     public function cita()
     {
         return $this->belongsTo('App\MedicalAppointment','medical_appointment_id');
@@ -14,5 +14,9 @@ class MedicalDiagnostic extends Model
     public function paciente()
     {
         return $this->belongsTo('App\Patient','patient_id');
+    }
+    public function prescripcion()
+    {
+        return $this->belongsTo('App\Prescription','prescription_id');
     }
 }

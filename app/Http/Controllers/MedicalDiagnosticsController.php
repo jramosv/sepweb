@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use PDF;
 use App\MedicalAppointment;
+use App\Prescription;
 use App\MedicalDiagnostic;
 use App\Patient;
 use Yajra\Datatables\Datatables;
@@ -29,11 +30,12 @@ class MedicalDiagnosticsController extends Controller
         $medical_diagnostics = DB::table('medical_diagnostics')
            ->join('medical_appointments', 'medical_diagnostics.medical_appointment_id', '=', 'medical_appointments.id')
            ->join('patients', 'medical_diagnostics.patient_id', '=', 'patients.id')
+           ->join('prescriptions', 'medical_diagnostics.prescription_id', '=', 'prescriptions.id')
            ->select('medical_diagnostics.id', 
             'medical_appointments.id',
             'patients.last_name',
             'medical_diagnostics.symptom',
-            // 'medical_diagnostics.treatment',
+            'prescriptions.id',
             'medical_diagnostics.diagnosis'     
         )->get();
 
