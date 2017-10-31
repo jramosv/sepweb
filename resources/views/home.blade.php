@@ -1,4 +1,3 @@
-@extends('layouts.app')
 @extends('layout.admin.admin')
 @section('titulo', 'Homepage')
 @section('contenido')

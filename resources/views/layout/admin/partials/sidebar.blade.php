@@ -28,41 +28,66 @@
                     </a>
                 </li>
                 <li>
+                    <a href="/citas">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Citas Medicas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/diagnosticos">
+                        <i class="pe-7s-id"></i>
+                        <p>Diagnostico Medico</p>
+                    </a>
+                </li>
+                <li>
                     <a href="/detalletransacciones">
                         <i class="pe-7s-note2"></i>
                         <p>Detalle de transacción</p>
                     </a>
                 </li>
+
                 <li>
                     <a href="/suministros">
-                        <i class="pe-7s-news-paper"></i>
+                        <i class="pe-7s-cart"></i>
                         <p>Suministros</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/enfermeras">
-                        <i class="pe-7s-science"></i>
-                        <p>Enfermera</p>
+                
+                 <li class="active">
+                    <a href="/">
+                        <i class="pe-7s-users"></i>
+                        <p>Personal</p>
                     </a>
-                </li>
+                
+                        <ul class="nav">
+                            <li>
+                            <a href="/doctores">
+                                <i class="pe-7s-bandaid"></i>
+                                <p>Doctores</p>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="/enfermeras">
+                                <i class="pe-7s-eyedropper"></i>
+                                <p>Enfermeras</p>
+                            </a>
+                            </li>
+                        </ul>
+                    </li>
                 <li>
                     <a href="/prescripciones">
                         <i class="pe-7s-map-marker"></i>
                         <p>Prescripciones</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/diagnosticos">
-                        <i class="pe-7s-bell"></i>
-                        <p>Diagnostico Medico</p>
-                    </a>
-                </li>
+                
 				<li class="active-pro">
                     <a href="/administracion">
                         <i class="pe-7s-rocket"></i>
                         <p>Administración</p>
                     </a>
                 </li>
+                
             </ul>
     	</div>
     </div>
