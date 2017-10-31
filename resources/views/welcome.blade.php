@@ -13,7 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-image: url(../public/img/slide-02.jpg);
+                background-size: cover;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -62,10 +63,22 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+                        
+            #bg {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+
+            /* Preserve aspet ratio */
+            min-width: 100%;
+            min-height: 100%;
+            }
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
+        
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -91,5 +104,8 @@
                 </div>
             </div>
         </div>
+
+
+
     </body>
 </html>

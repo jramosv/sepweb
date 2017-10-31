@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="blue" data-image="{{ asset('/img/sidebar-5.jpg')}}">
+<div class="sidebar" data-color="azure" data-image="{{ asset('/img/slide-03.jpg')}}">
 
     <!--
 
@@ -7,9 +7,9 @@
 
     -->
 
-    	<div class="sidebar-wrapper">
+    	<div class="sidebar-wrapper" > 
             <div class="logo">
-                <a href="http://sebweb.dev" class="simple-text">
+                <a href="http://sepweb.dev" class="simple-text">
                     SEPWEB
                 </a>
             </div>

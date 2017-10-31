@@ -3,7 +3,7 @@
 @section('contenido')
 	<h4>Editar Cita Medica</h4>
 
-<form action="{{ action('MedicalAppointmensController@update', ['MedicalAppointment' => $medical_appointment ])}}" method="POST">
+<form action="{{ action('MedicalAppointmentsController@update', ['medical_appointment' => $medical_appointment ])}}" method="POST">
             {{ csrf_field() }}
             {{ method_field('PUT') }}
 
@@ -32,7 +32,7 @@
 			<select name="patient_id" class="form-control" >
 				<option value="0">[ Seleccione un Paciente ]</option>
 				@foreach($pacientes as $item)
-					<option value= {{ $item->id }} {{ ( $medical_appointment->patient_id ) == $item->id ?'selected' : '' }} > {{ $item->id }} </option>
+					<option value= {{ $item->id }} {{ ( $medical_appointment->patient_id ) == $item->id ?'selected' : '' }} > {{  $item->first_name.' '. $item->last_name }} </option>
 				@endforeach
 			</select>
 			@if( $errors->has('patient_id'))
@@ -47,7 +47,7 @@
 			<select name="doctor_id" class="form-control" >
 				<option value="0">[ Seleccione un Doctor ]</option>
 				@foreach($doctores as $item)
-					<option value= {{ $item->id }} {{ ( $medical_appointment->doctor_id ) == $item->id ?'selected' : '' }} > {{ $item->id }} </option>
+					<option value= {{ $item->id }} {{ ( $medical_appointment->doctor_id ) == $item->id ?'selected' : '' }} > {{ $item->first_name.' '. $item->last_name }} </option>
 				@endforeach
 			</select>
 			@if( $errors->has('doctor_id'))

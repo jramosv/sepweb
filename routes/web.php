@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('layout.admin.admin');
 });
 
@@ -106,6 +106,9 @@ Route::get('/prescripciones/{id}', 'PrescriptionsController@edit');
 Route::put('/prescripciones/{prescription}', 'PrescriptionsController@update');
 Route::delete('/prescripciones/{prescription}', 'PrescriptionsController@destroy');
 
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/diagnosticos', 'MedicalDiagnosticsController@index');
 Route::get('/diagnosticos/crear', 'MedicalDiagnosticsController@create');
 Route::post('/diagnosticos', 'MedicalDiagnosticsController@store');
