@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
+use PDF;
 use App\Hospitalization;
 use App\Patient;
 use App\Room;
 use App\Nurse;
 use App\Procedure;
+use Yajra\Datatables\Datatables;
 use App\Http\Requests\HospitalizationsFormRequest;
-
-
 use Illuminate\Http\Request;
 
 class HospitalizationsController extends Controller
@@ -20,9 +21,37 @@ class HospitalizationsController extends Controller
      */
     public function index()
     {
-        $hospitalizations = Hospitalization::paginate(5);
-        return view('hospitalizations.index', compact('hospitalizations','Room','Nurse','Patient','Procedure'));
+        return view('hospitalizations.index');
         //
+    }
+    
+    public function getHospitalizationData()
+    {
+
+        $hospitalizations = DB::table('hospitalizations')
+           ->join('rooms', 'hospitalizations.room_id', '=', 'rooms.id')
+           ->join('procedures', 'hospitalizations.procedure_id', '=', 'procedures.id')
+           ->join('nurses', 'hospitalizations.nurse_id', '=', 'nurses.id')
+           ->join('patients', 'hospitalizations.patient_id', '=', 'patients.id')           
+           ->select('hospitalizations.id', 
+            'hospitalizations.input',
+            'patients.last_name',            
+            'rooms.name',
+            'nurses.firts_name',
+            'procedures.reason'
+
+        )->get();
+
+        return datatables($hospitalization)->toJson();
+
+    }
+
+    public function listarHospitalizacionesPdf(){
+        
+        $hospitalizations = hospitalization::all();
+        view()->share('hospitalizaciones',$hospitalizaciones);
+        $pdf = PDF::loadView('hospitalization.reports.report_all');
+        return $pdf->download('hospitalization.pdf');
     }
 
     /**

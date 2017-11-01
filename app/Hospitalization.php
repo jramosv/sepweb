@@ -12,22 +12,22 @@ class Hospitalization extends Model
         
         public function Room()
         {        
-            return $this->belongsTo('App\room'); 
+            return $this->belongsTo('App\room','room_id'); 
         }
 
         public function Procedure()
         {        
-            return $this->belongsTo('App\procedure'); 
+            return $this->belongsTo('App\procedure','procedure_id'); 
         }
 
         public function Nurse()
         {        
-            return $this->belongsTo('App\nurse'); 
+            return $this->belongsTo('App\nurse','nurse_id'); 
         }
     
         public function Patient()
         {        
-            return $this->belongTo('App\patient'); 
+            return $this->belongTo('App\patient','patient_id'); 
         }
     
 }

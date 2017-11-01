@@ -1,7 +1,7 @@
 @extends('layout.admin.admin')
 @section('titulo', 'Editar Enfermera')
 @section('contenido')
-	<h4>Editar informacion de la enfermera</h4>
+	<h4>Editar informacion de Hospitalizationes</h4>
 
 	<form action="{{ action('HospitalizationsController@update', ['Hospitalization' => $hospitalization ])}}" method="POST">
 	{{ csrf_field() }}
