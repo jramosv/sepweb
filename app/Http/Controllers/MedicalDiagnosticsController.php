@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use DB;
 use PDF;
 use App\MedicalAppointment;
-use App\Prescription;
 use App\MedicalDiagnostic;
 use App\Patient;
 use Yajra\Datatables\Datatables;
+use App\Http\Requests\MedicalDiagnosticsFormRequest;
 
 use Illuminate\Http\Request;
 
@@ -30,12 +30,11 @@ class MedicalDiagnosticsController extends Controller
         $medical_diagnostics = DB::table('medical_diagnostics')
            ->join('medical_appointments', 'medical_diagnostics.medical_appointment_id', '=', 'medical_appointments.id')
            ->join('patients', 'medical_diagnostics.patient_id', '=', 'patients.id')
-           ->join('prescriptions', 'medical_diagnostics.prescription_id', '=', 'prescriptions.id')
            ->select('medical_diagnostics.id', 
-            'medical_appointments.id',
+            'medical_appointments.id as appointment',
             'patients.last_name',
             'medical_diagnostics.symptom',
-            'prescriptions.id',
+            'medical_diagnostics.treatment',
             'medical_diagnostics.diagnosis'     
         )->get();
 
@@ -58,8 +57,9 @@ class MedicalDiagnosticsController extends Controller
      */
     public function create()
     {
-        
-        return view('medical_diagnostics.create');
+        $pacientes = Patient::all();
+        $citas = MedicalAppointment::all();
+        return view('medical_diagnostics.create', compact('citas','pacientes'));
     }
 
     /**
@@ -68,9 +68,17 @@ class MedicalDiagnosticsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MedicalDiagnosticsFormRequest $request)
     {
-        //
+         $medical_diagnostic = new MedicalDiagnostic();
+
+        $medical_diagnostic->medical_appointment_id = $request->medical_appointment_id;
+        $medical_diagnostic->patient_id = $request->patient_id;
+        $medical_diagnostic->treatment = $request->treatment;
+        $medical_diagnostic->symptom = $request->symptom;
+        $medical_diagnostic->diagnosis = $request->diagnosis;
+        $medical_diagnostic->save();
+        return redirect('/diagnosticos')->with('status', 'El Diagnostico se creo correctamente!');
     }
 
     /**
@@ -92,7 +100,11 @@ class MedicalDiagnosticsController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $medical_diagnostic = MedicalDiagnostic::find($id);
+        $pacientes = Patient::all();
+        $citas = MedicalAppointment::all();
+        return view('medical_diagnostics.edit', compact('citas','pacientes','medical_diagnostic'));
     }
 
     /**
@@ -102,9 +114,19 @@ class MedicalDiagnosticsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MedicalDiagnosticsFormRequest $request, MedicalDiagnostic $medical_diagnostic)
     {
-        //
+          $medical_diagnostic->update(
+            $request->only(
+                [
+                    'medical_appointment_id', 
+                    'patient_id', 
+                    'treatment',
+                    'symptom',
+                    'diagnosis',
+                ]
+            ));
+        return redirect('/diagnosticos')->with('status', 'El diagnostico se actualizo correctamente!');
     }
 
     /**
@@ -113,8 +135,9 @@ class MedicalDiagnosticsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(MedicalDiagnostic $medical_diagnostic)
     {
-        //
+        $medical_diagnostic->delete();
+        return redirect('/diagnosticos')->with('status', 'La Cita Medica se elimino de forma permanente!');
     }
 }

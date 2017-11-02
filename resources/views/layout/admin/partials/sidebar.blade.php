@@ -52,28 +52,17 @@
                         <p>Suministros</p>
                     </a>
                 </li>
-                
-                 <li class="active">
-                    <a href="/">
-                        <i class="pe-7s-users"></i>
-                        <p>Personal</p>
-                    </a>
-                
-                        <ul class="nav">
-                            <li>
-                            <a href="/doctores">
-                                <i class="pe-7s-bandaid"></i>
-                                <p>Doctores</p>
-                            </a>
-                            </li>
-                            <li>
-                            <a href="/enfermeras">
-                                <i class="pe-7s-eyedropper"></i>
-                                <p>Enfermeras</p>
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
+                <li class="dropdown">
+                <i class="pe-7s-users"></i>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personal <span class="caret"></span></a>
+                    <ul>
+                        <li><a href="/doctores">Doctores</a>
+                            <i class="pe-7s-bandaid"></i></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/enfermeras">Enfermeras</a>
+                        <i class="pe-7s-eyedropper"></i></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="/prescripciones">
                         <i class="pe-7s-map-marker"></i>

@@ -117,5 +117,5 @@ Route::post('/diagnosticos', 'MedicalDiagnosticsController@store');
 Route::get('/diagnosticos/{id}', 'MedicalDiagnosticsController@edit');
 Route::get('/diagnosticos_lista', 'MedicalDiagnosticsController@getMedicalDiagnosticsData');
 Route::get('/diagnosticos_todos_pdf', 'MedicalDiagnosticsController@listarDiagnosticosPdf');
-Route::put('/diagnosticos/{Medical_Diagnostic}', 'MedicalDiagnosticsController@update');
-Route::delete('/diagnosticos/{Medical_Diagnostic}', 'MedicalDiagnosticsController@destroy');
+Route::put('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@update');
+Route::delete('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@destroy');

@@ -35,6 +35,7 @@ class HospitalizationsController extends Controller
            ->join('patients', 'hospitalizations.patient_id', '=', 'patients.id')           
            ->select('hospitalizations.id', 
             'hospitalizations.input',
+            'hospitalizations.output',
             'patients.last_name',            
             'rooms.name',
             'nurses.firts_name',
@@ -42,13 +43,13 @@ class HospitalizationsController extends Controller
 
         )->get();
 
-        return datatables($hospitalization)->toJson();
+        return datatables($hospitalizations)->toJson();
 
     }
 
     public function listarHospitalizacionesPdf(){
         
-        $hospitalizations = hospitalization::all();
+        $hospitalizaciones = Hospitalization::all();
         view()->share('hospitalizaciones',$hospitalizaciones);
         $pdf = PDF::loadView('hospitalization.reports.report_all');
         return $pdf->download('hospitalization.pdf');
@@ -65,8 +66,8 @@ class HospitalizationsController extends Controller
         $enfermeras = Nurse::all();
         $habitaciones = Room::all();
         $procedimientos = Procedure::all();
-        return view('hospitalizations.create', compact('especialidades','enfermeras','habitaciones','procedimientos','pacientes'));
-        //
+        return view('hospitalizations.create', compact('enfermeras','habitaciones','procedimientos','pacientes'));
+        
     }
 
     /**

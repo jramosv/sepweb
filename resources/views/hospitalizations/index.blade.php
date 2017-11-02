@@ -6,12 +6,13 @@
         {{ session('status') }}
     </div>
 @endif
-	<h2 style="display: inline-block;"><small>Hospitalizaciones</small></h2><a href="/hospitalizaciones/crear" class="btn btn-success btn-sm pull-right" ><i class="fa fa-plus" aria-hidden="true"></i> Nuevas Hospitalizaciones</a> <a href="/hospitalizaciones_todos_pdf" class="btn btn-danger btn-sm pull-right" ><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Listado de Hospitalizaciones... </a>
+	<h2 style="display: inline-block;"><small>Hospitalizaciones</small></h2><a href="/hospitalizaciones/crear" class="btn btn-success btn-sm pull-right" ><i class="fa fa-plus" aria-hidden="true"></i> Nuevo Registro</a> <a href="/hospitalizaciones_todos_pdf" class="btn btn-danger btn-sm pull-right" ><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Listado de Hospitalizaciones... </a>
 		<table id="hospitalizations-table" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
 				<th>#</th>
                 <th>Entrada</th>
+                <th>Salida</th>
                 <th>Paciente</th>
                 <th>Habitacion</th>
                 <th>Enfermera</th>
@@ -23,6 +24,7 @@
             <tr>
 				<th>#</th>
                 <th>Entrada</th>
+                <th>Salida</th>
                 <th>Paciente</th>
                 <th>Habitacion</th>
                 <th>Enfermera</th>
@@ -59,6 +61,7 @@
             "columns": [
             { "data": "id" },
             { "data": "input" },
+            { "data": "output" },
             { "data": "patient_id" },
             { "data": "name" },
             { "data": "first_name" },
@@ -75,7 +78,6 @@
 	        },
 	        
         ]});
- 	parent.document.getElementByTag("body").reload();
     });
 
 </script>
