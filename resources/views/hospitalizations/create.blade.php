@@ -9,7 +9,7 @@
 		<div class=" {{ $errors->has('input') ? 'has-error' : '' }}">
         <div class="col-xs-4">
 			<label for="input">Entrada</label>
-			<input type="date" name="input" class="form-control" value="{{ old('input') }}" placeholder="Fecha de entrada"  />
+			<input type="datetime-local" name="input" class="form-control" value="{{ old('input') }}" placeholder="Fecha de entrada"  />
 		</div>
         <div class="col-xs-2">
             @if( $errors->has('input'))
@@ -23,7 +23,7 @@
         <div class=" {{ $errors->has('output') ? 'has-error' : '' }}">
         <div class="col-xs-4">
 			<label for="output">Salida</label>
-			<input type="date" name="output" class="form-control" placeholder="Fecha de Salida" value="{{ old('output') }}" />
+			<input type="datetime-local" name="output" class="form-control" placeholder="Fecha de Salida" value="{{ old('output') }}" />
 		</div>
             <div class="col-xs-2">
             @if( $errors->has('output'))

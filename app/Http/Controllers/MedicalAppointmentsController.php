@@ -141,7 +141,7 @@ class MedicalAppointmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(MedicalAppointment $medical_appointment)
     {
         
         $medical_appointment->delete();
