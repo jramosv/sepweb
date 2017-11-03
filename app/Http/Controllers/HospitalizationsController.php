@@ -38,7 +38,7 @@ class HospitalizationsController extends Controller
             'hospitalizations.output',
             'patients.last_name',            
             'rooms.name',
-            'nurses.firts_name',
+            'nurses.first_name',
             'procedures.reason'
 
         )->get();

@@ -62,10 +62,9 @@
             { "data": "id" },
             { "data": "input" },
             { "data": "output" },
-            { "data": "patient_id" },
+            { "data": "last_name" },
             { "data": "name" },
             { "data": "first_name" },
-            { "data": "output" },
             { "data": "reason" },
 			
         	{
