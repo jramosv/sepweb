@@ -38,7 +38,7 @@
 <script type="text/javascript" >
 	
 	$(function() {
-        $('#hospitalizations-table').DataTable({
+       $('#hospitalizations-table').DataTable({
             processing: true,
             serverSide: true,
             "dom": 'lBfrtip',
