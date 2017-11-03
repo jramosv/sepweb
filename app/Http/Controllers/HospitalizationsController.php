@@ -78,15 +78,15 @@ class HospitalizationsController extends Controller
      */
     public function store(HospitalizationsFormRequest $request)
     {
-        $hospitalization = new Hospitalization();
-        $hospitalization->patient_id = $request->patient_id;
-        $hospitalization->nurse_id = $request->nurse_id;
-        $hospitalization->procedure_id = $request->procedure_id;
-        $hospitalization->room_id = $request->room_id;
-        $hospitalization->input = $request->input;
-        $hospitalization->output = $request->output;
+        $hospitalizations = new Hospitalization();
+        $hospitalizations->patient_id = $request->patient_id;
+        $hospitalizations->nurse_id = $request->nurse_id;
+        $hospitalizations->procedure_id = $request->procedure_id;
+        $hospitalizations->room_id = $request->room_id;
+        $hospitalizations->input = $request->input;
+        $hospitalizations->output = $request->output;
         
-        $hospitalization->save();
+        $hospitalizations->save();
         return redirect('/hospitalizaciones')->with('status', 'El registro se creo correctamente!');
         //
     }
