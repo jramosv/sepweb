@@ -29,7 +29,7 @@ class HospitalizationsFormRequest extends FormRequest
             'nurse_id' => 'required',
             'patient_id' => 'required',
             'room_id' => 'required',
-            'procedures_id' => 'required',
+            'procedure_id' => 'required',
             
             //
         ];
