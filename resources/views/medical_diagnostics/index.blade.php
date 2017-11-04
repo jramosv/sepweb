@@ -58,7 +58,7 @@
         	],
             "columns": [
             { "data": "id" },
-            { "data": "appointment" },
+            { "data": "md" },
             { "data": "last_name" },
             { "data": "symptom" },
             { "data": "treatment" },            
