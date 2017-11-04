@@ -14,7 +14,7 @@
 
     <!-- Bootstrap core CSS     -->
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" />
-
+    <link href="{{ asset('/css/bootstrap-select.min.css') }}" rel="stylesheet" />
     <!-- Animation library for notifications   -->
     <link href="{{ asset('/css/animate.min.css') }}" rel="stylesheet"/>
 
@@ -111,6 +111,7 @@
     <!--   Core JS Files   -->
     <script src="{{ asset('/js/jquery-1.12.4.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/bootstrap-select.min.js') }}" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
 	<script src="{{ asset('/js/bootstrap-checkbox-radio-switch.js') }}"></script>
@@ -120,9 +121,6 @@
 
     <!--  Notifications Plugin    -->
     <script src="{{ asset('/js/bootstrap-notify.js') }}"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
     <script src="{{ asset('/js/light-bootstrap-dashboard.js') }}"></script>
