@@ -136,7 +136,7 @@ class HospitalizationsController extends Controller
                     'nurse_id',
                     'patient_id',
                     'room_id', 
-                    'procedures_id',
+                    'procedure_id',
                 ]
             ));
         return redirect('/hospitalizaciones')->with('status', 'La Hospitalizacion se actualizo correctamente!');
