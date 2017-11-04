@@ -150,8 +150,11 @@ class HospitalizationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Hospitalization $hospitalization)
     {
-        //
+       
+        $hospitalization->delete();
+        return redirect('/hospitalizaciones')->with('status', 'La enfermera se elimino de forma permanente!');
+      
     }
 }
