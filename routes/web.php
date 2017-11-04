@@ -119,11 +119,3 @@ Route::get('/diagnosticos_lista', 'MedicalDiagnosticsController@getMedicalDiagno
 Route::get('/diagnosticos_todos_pdf', 'MedicalDiagnosticsController@listarDiagnosticosPdf');
 Route::put('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@update');
 Route::delete('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@destroy');
-
-
-
-Route::group( ['middleware' => ['auth']], function() {
-    Route::resource('users', 'UserController');
-    Route::resource('roles', 'RoleController');
-    
-});
