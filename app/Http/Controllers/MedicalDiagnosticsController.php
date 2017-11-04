@@ -31,7 +31,7 @@ class MedicalDiagnosticsController extends Controller
            ->join('medical_appointments', 'medical_diagnostics.medical_appointment_id', '=', 'medical_appointments.id')
            ->join('patients', 'medical_diagnostics.patient_id', '=', 'patients.id')
            ->select('medical_diagnostics.id', 
-            'medical_appointments.id as appointment',
+            'medical_appointments.id as md',
             'patients.last_name',
             'medical_diagnostics.symptom',
             'medical_diagnostics.treatment',

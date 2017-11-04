@@ -9,7 +9,7 @@
 
 		<div class="form-group {{ $errors->has('date') ? 'has-error' : '' }}">
 			<label for="date">Fecha</label>
-			<input type="text" name="date" class="form-control" value="{{ $medical_appointment->date }}" placeholder="Fecha de Cita" autofocus />
+			<input type="date" name="date" class="form-control" value="{{ $medical_appointment->date }}" placeholder="Fecha de Cita" autofocus />
 			@if( $errors->has('date'))
 				<span class="help-block">
 					<strong>{{ $errors->first('date') }}</strong>
@@ -18,8 +18,8 @@
 		</div>
 
         <div class="form-group {{ $errors->has('time') ? 'has-error' : '' }}">
-			<label for="time">Fecha</label>
-			<input type="text" name="time" class="form-control" value="{{ $medical_appointment->time }}" placeholder="Hora de Cita" autofocus />
+			<label for="time">Hora</label>
+			<input type="time" name="time" class="form-control" value="{{ $medical_appointment->time }}" placeholder="Hora de Cita" autofocus />
 			@if( $errors->has('date'))
 				<span class="help-block">
 					<strong>{{ $errors->first('time') }}</strong>
