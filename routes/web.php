@@ -12,7 +12,7 @@
 */
 
 Route::get('/home', function () {
-    return view('layout.admin.admin');
+    return view('home');
 });
 
 Route::middleware(['api', 'cors'])->group(function () {
@@ -76,6 +76,8 @@ Route::post('/hospitalizaciones', 'HospitalizationsController@store');
 Route::get('/hospitalizaciones/{id}', 'HospitalizationsController@edit');
 Route::put('/hospitalizaciones/{hospitalization}', 'HospitalizationsController@update');
 Route::delete('/hospitalizaciones/{hospitalization}', 'HospitalizationsController@destroy');
+Route::get('/hospitalizaciones_lista', 'HospitalizationsController@getHospitalizationData');
+Route::get('/hospitalizaciones_todos_pdf', 'HospitalizationsController@listarHospitalizacionesPdf');
 
 Route::get('/transacciones', 'TransactionsController@index');
 Route::get('/transacciones/crear', 'TransactionsController@create');
@@ -93,16 +95,10 @@ Route::get('/citas_todas_pdf', 'MedicalAppointmentsController@listarCitasPdf');
 Route::put('/citas/{medical_appointment}', 'MedicalAppointmentsController@update');
 Route::delete('/citas/{medical_appointment}', 'MedicalAppointmentsController@destroy');
 
-Route::get('/prescripciones', 'PrescriptionsController@index');
-Route::get('/prescripciones/crear', 'PrescriptionsController@create');
-Route::post('/prescripciones', 'PrescriptionsController@store');
-Route::get('/prescripciones/{id}', 'PrescriptionsController@edit');
-Route::put('/prescripciones/{prescription}', 'PrescriptionsController@update');
-Route::delete('/prescripciones/{prescription}', 'PrescriptionsController@destroy');
-
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/diagnosticos', 'MedicalDiagnosticsController@index');
 Route::get('/diagnosticos/crear', 'MedicalDiagnosticsController@create');
 Route::post('/diagnosticos', 'MedicalDiagnosticsController@store');
@@ -161,3 +157,5 @@ Route::get('/recetas', 'RecipesController@index');
 Route::get('/recetas/crear', 'RecipesController@create');
 Route::post('/recetas', 'RecipesController@store');
 Route::delete('/recetas/{recipe}', 'RecipesController@destroy');
+Route::put('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@update');
+Route::delete('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@destroy');

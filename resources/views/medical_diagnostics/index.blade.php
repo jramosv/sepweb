@@ -1,5 +1,5 @@
 @extends('layout.admin.admin')
-@section('titulo', 'Enfermera')
+@section('titulo', 'Diagnostico Medico')
 @section('contenido')
 @if (session('status'))
     <div class="alert alert-info">
@@ -14,6 +14,7 @@
 				<th>Cita</th>
                 <th>Nombre del paciente</th>
 				<th>Sintoma</th>
+                <th>prescripcion</th>
                 <th>Diagnostico</th>
 				<th>Acciones</th>
 			</tr>
@@ -24,6 +25,7 @@
                 <th>Cita</th>
                 <th>Nombre del paciente</th>
 				<th>Sintoma</th>
+                <th>prescripcion</th>
                 <th>Diagnostico</th>
 				<th>Acciones</th>
                 </tr>
@@ -56,21 +58,21 @@
         	],
             "columns": [
             { "data": "id" },
-            { "data": "id" },
+            { "data": "md" },
             { "data": "last_name" },
             { "data": "symptom" },
+            { "data": "treatment" },            
             { "data": "diagnosis" },
         	{
 	            "data": null,
 	            "className": "enlace",
 	            "defaultContent": null,
                 "render": function(data,type,row,meta) {
-                    return '<a class="btn btn-primary btn-xs" href="/diagnistico/' + row.id + '"><i class="fa fa-pencil" aria-hidden="true"></i></a> <form id="delete-form"  action="/diagnostico/' + row.id + '" method="POST" style="display: inline;">{{ csrf_field() }}{{ method_field("DELETE") }}<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button></form>';
+                    return '<a class="btn btn-primary btn-xs" href="/diagnosticos/' + row.id + '"><i class="fa fa-pencil" aria-hidden="true"></i></a> <form id="delete-form"  action="/diagnosticos/' + row.id + '" method="POST" style="display: inline;">{{ csrf_field() }}{{ method_field("DELETE") }}<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button></form>';
                 },
 	        },
 	        
         ]});
- 	parent.document.getElementByTag("body").reload();
     });
 
 </script>

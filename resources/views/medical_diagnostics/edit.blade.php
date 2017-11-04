@@ -1,11 +1,11 @@
 @extends('layout.admin.admin')
-@section('titulo', 'Diagnosticos')
+@section('titulo', 'Editar Diagnosticos')
 @section('contenido')
-	<h4>Agregar Diagnostico Médico</h4>
+	<h4>Editar Diagnostico Médico</h4>
 
-	<form method="POST" action="/diagnosticos">
+	<form action="{{ action('MedicalDiagnosticsController@update', ['medical_diagnostic' => $medical_diagnostic ])}}" method="POST">
 		{{ csrf_field() }}
-
+        {{ method_field('PUT') }}
 
 		
 		<div class="form-group {{ $errors->has('medical_appointment_id') ? 'has-error' : '' }}">

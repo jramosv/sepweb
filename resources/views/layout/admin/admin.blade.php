@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>SEPWEB | @yield('titulo', 'Pagina Principal')</title>
+	<title>SEPWEB | @yield('titulo', 'Clinica del Niño')</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -58,34 +58,65 @@
                             <a class="navbar-brand" href="#">@yield('titulo', 'Dashboard')</a>
                         </div>
                         <div class="collapse navbar-collapse">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                   <a href="">
-                                    <i class="fa fa-user-md" aria-hidden="true"></i>
-                                       Freddy Marroquin { Pediatra/Ginecologo }
-                                    </a>
-                                </li>
-                                <li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="fa fa-cog" aria-hidden="true"></i>
-                                            Mi Panel
-                                            <b class="caret"></b>
-                                      </a>
-                                      <ul class="dropdown-menu">
-                                        <li><a href="#">Editar info.</a></li>
-                                        <li><a href="#">Cambiar contraseña</a></li>
-                                        <li><a href="#">Bandeja de mensajes</a></li>
-                                        <li><a href="#">Reportar fallos</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Darme de baja</a></li>
-                                      </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
-                                        Cerrar sesión
-                                    </a>
-                                </li>
+                           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="navbar-header">
+
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                         - Sistema Estadistico de Pacientes 
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        &nbsp;
+                    </ul>
+
+                    <!-- RightSide Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li><a href="{{ route('login') }}">Iniciar sesion</a></li>
+                            <li><a href="{{ route('register') }}">Registro</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Cerrar Sesion
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+                    </ul>
                             </ul>
                         </div>
                     </div>
@@ -97,13 +128,10 @@
                     </div>
                 </div>
 
-                <p class="copyright pull-right">
-                    &copy; 2017 <a href="http://sepweb.dev">Made with <3</a>,  for  José Villeda, Karen Gonzales, Kevin Fajardo & Eddy Eleazar
-                </p>
             </div>
         </footer>
 
-    </div>
+    </div> 
 
 
 </body>

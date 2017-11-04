@@ -16,8 +16,8 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="/">
-                        <i class="pe-7s-graph"></i>
+                    <a href="/home">
+                        <i class="pe-7s-world"></i>
                         <p>Inicio</p>
                     </a>
                 </li>
@@ -28,41 +28,45 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/detalletransacciones">
-                        <i class="pe-7s-note2"></i>
-                        <p>Detalle de transacción</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/farmacia">
+                    <a href="/citas">
                         <i class="pe-7s-news-paper"></i>
-                        <p>Farmacia</p>
+                        <p>Citas Medicas</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/enfermeras">
-                        <i class="pe-7s-science"></i>
-                        <p>Enfermera</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/prescripciones">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Prescripciones</p>
+                    <a href="/hospitalizaciones">
+                        <i class="pe-7s-id"></i>
+                        <p>Hospitalizaciones</p>
                     </a>
                 </li>
                 <li>
                     <a href="/diagnosticos">
-                        <i class="pe-7s-bell"></i>
-                        <p>Diagnostico Medico</p>
+                        <i class="pe-7s-note2"></i>
+                        <p>Diagnosticos</p>
                     </a>
                 </li>
-				<li class="active-pro">
-                    <a href="/administracion">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Administración</p>
+
+                <li>
+                    <a href="/especialidades">
+                        <i class="pe-7s-albums"></i>
+                        <p>Especialidades</p>
                     </a>
                 </li>
+
+                <li>
+                    <a href="/enfermeras">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Enfermeras</p>
+                    </a>
+                </li>
+                
+                  <li>
+                    <a href="/habitaciones">
+                        <i class="pe-7s-door-lock"></i>
+                        <p>Habitaciones</p>
+                    </a>
+                </li>
+                
             </ul>
     	</div>
     </div>
