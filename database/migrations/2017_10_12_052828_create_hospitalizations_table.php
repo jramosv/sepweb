@@ -15,8 +15,8 @@ class CreateHospitalizationsTable extends Migration
     {
         Schema::create('hospitalizations', function (Blueprint $table) {
             $table->increments('id');
-            $table->dateTime('output');
-            $table->dateTime('input');
+            $table->date('output');
+            $table->date('input');
             $table->integer('room_id')->unsigned();
             $table->foreign('room_id')->references('id')->on('rooms');
             $table->integer('procedure_id')->unsigned();
