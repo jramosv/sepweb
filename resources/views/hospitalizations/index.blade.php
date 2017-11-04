@@ -16,8 +16,8 @@
                 <th>Paciente</th>
                 <th>Habitacion</th>
                 <th>Enfermera</th>
+                <th>Salida</th>
                 <th>Procedimiento</th>
-                <th>Acciones</th>
 			</tr>
         </thead>
         <tfoot>
@@ -28,8 +28,8 @@
                 <th>Paciente</th>
                 <th>Habitacion</th>
                 <th>Enfermera</th>
+                <th>Salida</th>
                 <th>Procedimiento</th>
-                <th>Acciones</th>
 			</tr>
 			</tr>
         </tfoot>

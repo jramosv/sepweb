@@ -73,7 +73,7 @@
 	            "className": "enlace",
 	            "defaultContent": null,
                 "render": function(data,type,row,meta) {
-                    return '<a class="btn btn-primary btn-xs" href="/pacientes/' + row.id + '"><i class="fa fa-pencil" aria-hidden="true"></i></a> <form id="delete-form"  action="/pacientes/' + row.id + '" method="POST" style="display: inline;">{{ csrf_field() }}{{ method_field("DELETE") }}<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button></form>';
+                    return '<a class="btn btn-primary btn-xs" href="/pacientes/' + row.id + '"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a class="btn btn-primary btn-xs" onclick="eliminarPaciente(' + row.id + ')" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <form id="delete-form"  action="/pacientes/' + row.id + '" method="POST" style="display: inline;">{{ csrf_field() }}{{ method_field("DELETE") }}<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button></form>';
                 },
 	        },
 	        

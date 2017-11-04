@@ -1,5 +1,5 @@
 @extends('layout.admin.admin')
-@section('titulo', 'Clinica Del Niño')
+@section('titulo', 'Homepage')
 @section('contenido')
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center" background-color="white">
