@@ -12,7 +12,7 @@
 */
 
 Route::get('/home', function () {
-    return view('layout.admin.admin');
+    return view('home');
 });
 
 Route::middleware(['api', 'cors'])->group(function () {
