@@ -157,5 +157,7 @@ Route::get('/recetas', 'RecipesController@index');
 Route::get('/recetas/crear', 'RecipesController@create');
 Route::post('/recetas', 'RecipesController@store');
 Route::delete('/recetas/{recipe}', 'RecipesController@destroy');
+
+
 Route::put('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@update');
 Route::delete('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@destroy');
