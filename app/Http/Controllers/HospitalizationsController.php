@@ -110,12 +110,12 @@ class HospitalizationsController extends Controller
      */
     public function edit($id)
     {
-        $hospitalzations = Hospitalization::find($id);
+        $hospitalization = Hospitalization::find($id);
         $pacientes = Patient::all();
         $enfermeras = Nurse::all();
         $habitaciones = Room::all();
         $procedimientos = Procedure::all();
-        return view('hospitalizations.edit', compact('hospitalizations','habitaciones','enfermeras','pacientes','Procedimientps'));
+        return view('hospitalizations.edit', compact('hospitalization','habitaciones','enfermeras','pacientes','procedimientos'));
         //
     }
 
@@ -126,9 +126,9 @@ class HospitalizationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(HosptitalizationsFormRequest $request, Hospitalization  $hospitalization)
+    public function update(HospitalizationsFormRequest $request, Hospitalization  $hospitalization)
     {
-        $patient->update(
+        $hospitalization->update(
             $request->only(
                 [
                     'input',
