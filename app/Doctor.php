@@ -13,7 +13,6 @@ class Doctor extends Model
     public function especialidad()
     {
         return $this->belongsTo('App\Specialty','speciality_id');
- 
     }
 
 }
