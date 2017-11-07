@@ -1,5 +1,5 @@
 @extends('layout.admin.admin')
-@section('titulo', 'Editar paciente')
+@section('titulo', 'Editar Cita')
 @section('contenido')
 	<h4>Editar Cita Medica</h4>
 
@@ -9,7 +9,7 @@
 
 		<div class="form-group {{ $errors->has('date') ? 'has-error' : '' }}">
 			<label for="date">Fecha</label>
-			<input type="text" name="date" class="form-control" value="{{ $medical_appointment->date }}" placeholder="Fecha de Cita" autofocus />
+			<input type="date" name="date" class="form-control" value="{{ $medical_appointment->date }}" placeholder="Fecha de Cita" autofocus />
 			@if( $errors->has('date'))
 				<span class="help-block">
 					<strong>{{ $errors->first('date') }}</strong>
@@ -19,7 +19,7 @@
 
         <div class="form-group {{ $errors->has('time') ? 'has-error' : '' }}">
 			<label for="time">Fecha</label>
-			<input type="text" name="time" class="form-control" value="{{ $medical_appointment->time }}" placeholder="Hora de Cita" autofocus />
+			<input type="time" name="time" class="form-control" value="{{ $medical_appointment->time }}" placeholder="Hora de Cita" autofocus />
 			@if( $errors->has('date'))
 				<span class="help-block">
 					<strong>{{ $errors->first('time') }}</strong>
