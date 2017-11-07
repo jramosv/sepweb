@@ -112,6 +112,7 @@ Route::get('/diagnosticos_lista', 'MedicalDiagnosticsController@getMedicalDiagno
 Route::get('/diagnosticos_todos_pdf', 'MedicalDiagnosticsController@listarDiagnosticosPdf');
 Route::put('/diagnosticos/{Medical_Diagnostic}', 'MedicalDiagnosticsController@update');
 Route::delete('/diagnosticos/{Medical_Diagnostic}', 'MedicalDiagnosticsController@destroy');
+<<<<<<< HEAD
 /**
 *	Rutas para todo lo relacionado con bodega e inventario
 */
@@ -164,3 +165,5 @@ Route::post('/recetas', 'RecipesController@store');
 Route::delete('/recetas/{recipe}', 'RecipesController@destroy');
 Route::put('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@update');
 Route::delete('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@destroy');
+=======
+>>>>>>> parent of 40d6350e... Creacion del area de bodega

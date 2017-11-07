@@ -34,9 +34,15 @@
                     </a>
                 </li>
                 <li>
+<<<<<<< HEAD
                     <a href="/diagnosticos">
                         <i class="pe-7s-id"></i>
                         <p>Diagnostico Medico</p>
+=======
+                    <a href="/suministros">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Suministros</p>
+>>>>>>> parent of 40d6350e... Creacion del area de bodega
                     </a>
                 </li>
                 <li>
