@@ -170,11 +170,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-<<<<<<< HEAD
         Spatie\Permission\PermissionServiceProvider::class,
-=======
-
->>>>>>> parent of 3ec4553d... sistema login
         /*
          * Application Service Providers...
          */
@@ -237,14 +233,11 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
 <<<<<<< HEAD
-<<<<<<< HEAD
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 =======
         
 >>>>>>> 5ae9bf92d9df04b465634a60016c13090aebff15
-=======
->>>>>>> parent of 3ec4553d... sistema login
     ],
 
 ];
