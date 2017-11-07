@@ -12,7 +12,7 @@
 */
 
 Route::get('/home', function () {
-    return view('layout.admin.admin');
+    return view('home');
 });
 
 Route::middleware(['api', 'cors'])->group(function () {
@@ -38,12 +38,6 @@ Route::get('/detalletransacciones/{id}', 'TransactionDetailsController@edit');
 Route::put('/detalletransacciones/{patient}', 'TransactionDetailsController@update');
 Route::delete('/detalletransacciones/{transaction_detail}', 'TransactionDetailsController@destroy');
 
-Route::get('/suministros', 'SuppliesController@index');
-Route::get('/suministros/crear', 'SuppliesController@create');
-Route::post('/suministros', 'SuppliesController@store');
-Route::get('/suministros/{id}', 'SuppliesController@edit');
-Route::put('/suministros/{supply}', 'SuppliesController@update');
-Route::delete('/suministros/{supply}', 'SuppliesController@destroy');
 
 Route::get('/enfermeras', 'NursesController@index');
 Route::get('/enfermeras/crear', 'NursesController@create');
@@ -104,6 +98,7 @@ Route::delete('/citas/{medical_appointment}', 'MedicalAppointmentsController@des
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/diagnosticos', 'MedicalDiagnosticsController@index');
 Route::get('/diagnosticos/crear', 'MedicalDiagnosticsController@create');
 Route::post('/diagnosticos', 'MedicalDiagnosticsController@store');
@@ -112,7 +107,6 @@ Route::get('/diagnosticos_lista', 'MedicalDiagnosticsController@getMedicalDiagno
 Route::get('/diagnosticos_todos_pdf', 'MedicalDiagnosticsController@listarDiagnosticosPdf');
 Route::put('/diagnosticos/{Medical_Diagnostic}', 'MedicalDiagnosticsController@update');
 Route::delete('/diagnosticos/{Medical_Diagnostic}', 'MedicalDiagnosticsController@destroy');
-<<<<<<< HEAD
 /**
 *	Rutas para todo lo relacionado con bodega e inventario
 */
@@ -163,7 +157,7 @@ Route::get('/recetas', 'RecipesController@index');
 Route::get('/recetas/crear', 'RecipesController@create');
 Route::post('/recetas', 'RecipesController@store');
 Route::delete('/recetas/{recipe}', 'RecipesController@destroy');
+
+
 Route::put('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@update');
 Route::delete('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@destroy');
-=======
->>>>>>> parent of 40d6350e... Creacion del area de bodega

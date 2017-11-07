@@ -21,9 +21,7 @@
 					<td width="20px">{{ $specialty->id }}</td>
 					<td>{{ $specialty->name }}</td>
 					<td width="120px">
-						<a href="#" class="btn btn-primary btn-xs">
-							<i class="fa fa-user-md" aria-hidden="true"></i>
-						</a>
+					
 						<a href="/especialidades/{{ $specialty->id }}" class="btn btn-warning btn-xs">
 							<i class="fa fa-pencil" aria-hidden="true"></i>
 						</a>

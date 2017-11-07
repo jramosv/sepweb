@@ -1,5 +1,5 @@
 @extends('layout.admin.admin')
-@section('titulo', 'Crear Cita')
+@section('titulo', 'Crear paciente')
 @section('contenido')
 	<h4>Crear Cita Medica</h4>
 

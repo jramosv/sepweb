@@ -16,8 +16,8 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="/">
-                        <i class="pe-7s-graph"></i>
+                    <a href="/home">
+                        <i class="pe-7s-world"></i>
                         <p>Inicio</p>
                     </a>
                 </li>
@@ -34,52 +34,39 @@
                     </a>
                 </li>
                 <li>
-<<<<<<< HEAD
-                    <a href="/diagnosticos">
+                    <a href="/hospitalizaciones">
                         <i class="pe-7s-id"></i>
-                        <p>Diagnostico Medico</p>
-=======
-                    <a href="/suministros">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Suministros</p>
->>>>>>> parent of 40d6350e... Creacion del area de bodega
+                        <p>Hospitalizaciones</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/especialidades">
+                    <a href="/diagnosticos">
                         <i class="pe-7s-note2"></i>
+                        <p>Diagnosticos</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/especialidades">
+                        <i class="pe-7s-albums"></i>
                         <p>Especialidades</p>
                     </a>
                 </li>
 
                 <li>
                     <a href="/enfermeras">
-                        <i class="pe-7s-cart"></i>
+                        <i class="pe-7s-bandaid"></i>
                         <p>Enfermeras</p>
-                    </a>
-
-                <li>
-                    <a href="/doctores">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Doctores</p>
                     </a>
                 </li>
                 
-                <li>
+                  <li>
                     <a href="/habitaciones">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-door-lock"></i>
                         <p>Habitaciones</p>
                     </a>
                 </li>
-
-                <li>
-                    <a href="/hospitalizaciones">
-                        <i class="pe-7s-note2"></i>
-                        <p>Hospitalizaciones</p>
-                    </a>
-                </li>
-
-                        
+                
             </ul>
     	</div>
     </div>

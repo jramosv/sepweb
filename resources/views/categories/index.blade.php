@@ -1,31 +1,27 @@
 @extends('layout.admin.admin')
 
 @section('contenido')
-	<h2 style="display: inline-block;"><small>suministros</small></h2><a href="/suministros/crear" class="btn btn-success btn-sm pull-right" >Nuevo paciente</a>
+	<h2 style="display: inline-block;"><small>Categorías</small></h2><a href="/categorias/crear" class="btn btn-success btn-sm pull-right" >Nueva categoria</a>
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 			<tr>
 				<th>#</th>
 				<th>Nombre</th>
-				<th>Cantidad</th>
-				<th>Precio</th>
-				<th>Detalle</th>
+				<th>Decripción</th>
 				<th>Acciones</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($supplies as $supply)
+			@foreach($categories as $category)
 				<tr>
-					<td width="20px">{{ $supply->id }}</td>
-					<td>{{ $supply->name }}</td>
-					<td>{{ $supply->quantity }}</td>
-					<td>{{ $supply->price }}</td>
-					<td>{{ $supply->detail }}</td>
+					<td width="20px">{{ $category->id }}</td>
+					<td>{{ $category->name }}</td>
+					<td>{{ $category->description }}</td>
 					<td width="120px">
 						<a href="#" class="btn btn-primary btn-xs">
 							<i class="fa fa-user-md" aria-hidden="true"></i>
 						</a>
-						<a href="/suministros/{{ $supply->id }}" class="btn btn-warning btn-xs">
+						<a href="/categorias/{{ $category->id }}" class="btn btn-warning btn-xs">
 							<i class="fa fa-pencil" aria-hidden="true"></i>
 						</a>
 						<a href="#"
@@ -34,12 +30,13 @@
 							<i class="fa fa-trash" aria-hidden="true"></i>
 						</a>
 
-                        <form id="delete-form" action="{{ action('SuppliesController@destroy', ['supply' => $supply ])}}" method="POST" style="display: none;">
+                        <form id="delete-form" action="{{ action('CategoriesController@destroy', ['category' => $category ])}}" method="POST" style="display: none;">
                         	{{ csrf_field() }}
                         	{{ method_field('DELETE') }}
+                        </form>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
-	@include('patients.modals.create')
+	{{ $categories->render() }}
 @endsection
