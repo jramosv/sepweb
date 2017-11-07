@@ -6,7 +6,6 @@
 	<form action="{{ action('HospitalizationsController@update', ['hospitalization' => $hospitalization ])}}" method="POST">
 		{{ csrf_field() }}
         {{ method_field('PUT') }}
-		
 		<div class="form-group {{ $errors->has('input') ? 'has-error' : '' }}">
 			<label for="input">Entrada</label>
 			<input type="date" name="input" class="form-control" value="{{ $hospitalization->input }}" />

@@ -16,8 +16,8 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="/home">
-                        <i class="pe-7s-world"></i>
+                    <a href="/">
+                        <i class="pe-7s-graph"></i>
                         <p>Inicio</p>
                     </a>
                 </li>
@@ -34,36 +34,46 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/hospitalizaciones">
-                        <i class="pe-7s-id"></i>
-                        <p>Hospitalizaciones</p>
-                    </a>
-                </li>
-                <li>
                     <a href="/diagnosticos">
+                        <i class="pe-7s-id"></i>
+                        <p>Diagnostico Medico</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/detalletransacciones">
                         <i class="pe-7s-note2"></i>
-                        <p>Diagnosticos</p>
+                        <p>Detalle de transacción</p>
                     </a>
                 </li>
 
                 <li>
-                    <a href="/especialidades">
-                        <i class="pe-7s-albums"></i>
-                        <p>Especialidades</p>
+                    <a href="/suministros">
+                        <i class="pe-7s-cart"></i>
+                        <p>Suministros</p>
                     </a>
                 </li>
-
+                <li class="dropdown">
+                <i class="pe-7s-users"></i>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personal <span class="caret"></span></a>
+                    <ul>
+                        <li><a href="/doctores">Doctores</a>
+                            <i class="pe-7s-bandaid"></i></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/enfermeras">Enfermeras</a>
+                        <i class="pe-7s-eyedropper"></i></li>
+                    </ul>
+                </li>
                 <li>
-                    <a href="/enfermeras">
-                        <i class="pe-7s-bandaid"></i>
-                        <p>Enfermeras</p>
+                    <a href="/prescripciones">
+                        <i class="pe-7s-map-marker"></i>
+                        <p>Prescripciones</p>
                     </a>
                 </li>
                 
-                  <li>
-                    <a href="/habitaciones">
-                        <i class="pe-7s-door-lock"></i>
-                        <p>Habitaciones</p>
+				<li class="active-pro">
+                    <a href="/administracion">
+                        <i class="pe-7s-rocket"></i>
+                        <p>Administración</p>
                     </a>
                 </li>
                 
