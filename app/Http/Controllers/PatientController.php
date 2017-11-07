@@ -134,7 +134,5 @@ class PatientController extends Controller
 
     $patient->delete();
     return redirect('/pacientes')->with('status', 'La enfermera se elimino de forma permanente!');
-  
-
 }
 }
