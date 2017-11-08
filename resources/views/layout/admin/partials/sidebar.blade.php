@@ -59,6 +59,13 @@
                         <p>Enfermeras</p>
                     </a>
                 </li>
+
+                <li>
+                    <a href="/doctores">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Doctores</p>
+                    </a>
+                </li>
                 
                   <li>
                     <a href="/habitaciones">

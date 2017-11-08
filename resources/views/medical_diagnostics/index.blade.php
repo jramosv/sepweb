@@ -14,9 +14,9 @@
 				<th>Cita</th>
                 <th>Nombre del paciente</th>
 				<th>Sintoma</th>
-                <th>prescripcion</th>
+                <th>Tratamiento</th>
                 <th>Diagnostico</th>
-				<th>Acciones</th>
+				<th> </th>
 			</tr>
         </thead>
         <tfoot>
@@ -25,7 +25,7 @@
                 <th>Cita</th>
                 <th>Nombre del paciente</th>
 				<th>Sintoma</th>
-                <th>prescripcion</th>
+                <th>Tratamiento</th>
                 <th>Diagnostico</th>
 				<th>Acciones</th>
                 </tr>

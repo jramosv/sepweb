@@ -49,9 +49,9 @@ class HospitalizationsController extends Controller
 
     public function listarHospitalizacionesPdf(){
         
-        $hospitalizaciones = Hospitalization::all();
-        view()->share('hospitalizaciones',$hospitalizaciones);
-        $pdf = PDF::loadView('hospitalization.reports.report_all');
+        $hospitalizations = Hospitalization::all();
+        view()->share('hospitalizations',$hospitalizations);
+        $pdf = PDF::loadView('hospitalizations.reports.report_all');
         return $pdf->download('hospitalization.pdf');
     }
 

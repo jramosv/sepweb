@@ -39,10 +39,10 @@ class NursesController extends Controller
         return datatables($nurses)->toJson();
     }
     
-    public function listarNursesPdf(){
+    public function listarEnfermerasPdf(){
         
         $nurses = Nurse::all();
-        view()->share('enfermera',$enfermera);
+        view()->share('nurses',$nurses);
         $pdf = PDF::loadView('nurses.reports.report_all');
         return $pdf->download('allNurses.pdf');
     }

@@ -43,7 +43,7 @@
 		</div>
 
                 <div class="form-group {{ $errors->has('procedure_id') ? 'has-error' : '' }}">
-			<label for="procedure_id">procedimientos</label>
+			<label for="procedure_id">Procedimientos</label>
 			<select name="procedure_id" class="form-control" >
 				<option value="0">[ Seleccione una procedimiento ]</option>
 				@foreach($procedimientos as $item)

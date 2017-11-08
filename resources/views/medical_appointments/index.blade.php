@@ -16,7 +16,7 @@
 				<th>Paciente</th>
 				<th>Doctor</th>
                 <th>Estado de Cita</th>
-				<th>Acciones</th>
+				<th> </th>
 			</tr>
         </thead>
         <tfoot>

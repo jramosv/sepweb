@@ -6,7 +6,7 @@
         {{ session('status') }}
     </div>
 @endif
-	<h2 style="display: inline-block;"><small>Especialidades</small></h2><a href="/especialidades/crear" class="btn btn-success btn-sm pull-right" ><i class="fa fa-plus" aria-hidden="true"></i> Nuevo paciente</a>
+	<h2 style="display: inline-block;"><small>Especialidades</small></h2><a href="/especialidades/crear" class="btn btn-success btn-sm pull-right" ><i class="fa fa-plus" aria-hidden="true"></i> Nueva especialidad</a>
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 			<tr>

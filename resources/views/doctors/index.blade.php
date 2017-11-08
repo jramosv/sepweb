@@ -30,10 +30,7 @@
 					<td>{{ $doctor->especialidad->name }}</td>
 
 					<td width="122px">
-					<a href="#" class="btn btn-primary btn-xs" onclick="event.preventDefault();
-								alert('TODO: Aqui se mostrara el historial clinico del doctor.');">
-						<i class="fa fa-user-md" aria-hidden="true"></i>
-					</a>
+				
 					<a href="/doctores/{{ $doctor->id }}" class="btn btn-warning btn-xs">
 						<i class="fa fa-pencil" aria-hidden="true"></i>
 					</a>

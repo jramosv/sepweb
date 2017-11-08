@@ -1,4 +1,5 @@
 @extends('layout.admin.admin')
+@section('titulo', 'Habitaciones')
 @section('contenido')
 @if (session('status'))
     <div class="alert alert-info">
@@ -24,10 +25,7 @@
 					<td>{{ $room->bed }}</td>
 					
 					<td width="122px">
-					<a href="#" class="btn btn-primary btn-xs" onclick="event.preventDefault();
-								alert('TODO: Aqui se mostrara el historial de las habitaciones.');">
-						<i class="fa fa-user-md" aria-hidden="true"></i>
-					</a>
+				
 					<a href="/habitaciones/{{ $room->id }}" class="btn btn-warning btn-xs">
 						<i class="fa fa-pencil" aria-hidden="true"></i>
 					</a>

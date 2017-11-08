@@ -18,7 +18,7 @@
 				<th>Sexo</th>
 				<th>Email</th>
 				<th>Tipo Sangre</th>
-				<th>Acciones</th>
+				<th> </th>
 			</tr>
         </thead>
         <tfoot>

@@ -17,7 +17,7 @@
                 <th>Habitacion</th>
                 <th>Enfermera</th>
                 <th>Procedimiento</th>
-                <th>Acciones</th>
+                <th> </th>
 			</tr>
         </thead>
         <tfoot>

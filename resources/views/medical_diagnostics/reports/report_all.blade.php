@@ -1,5 +1,5 @@
 @extends('layout.reports.reports_main')
-@section('titulo', 'Listado de Citas')
+@section('titulo', 'Listado de Diagnosticos')
 @section('contenido')
 	<table class="table table-bordered table-striped">
 		<thead>
@@ -9,18 +9,18 @@
 				<th>Nombre del paciente</th>
 				<th>Sintoma</th>
 				<th>Tratamiento</th>
-				<th>Paciente</th>
+				<th>Diagnostico</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($Diagnosticos as $Diagnostico)
+			@foreach($diagnosticos as $diagnostico)
 			<tr>
-				<td>{{ $Diagnostico->id }}</td>
-				<td>{{ $Diagnostico->cita->id }}</td>
-				<td>{{ $Diagnostico->paciente->last_name }}</td>
-				<td>{{ $Diagnostico->symptom }}</td>
-				<td>{{ $Diagnostico->treatment }}</td>
-				<td>{{ $Diagnostico->diagnosis }}</td>
+				<td>{{ $diagnostico->id }}</td>
+				<td>{{ $diagnostico->cita->id }}</td>
+				<td>{{ $diagnostico->paciente->last_name }}</td>
+				<td>{{ $diagnostico->symptom }}</td>
+				<td>{{ $diagnostico->treatment }}</td>
+				<td>{{ $diagnostico->diagnosis }}</td>
 			</tr>
 			@endforeach
 		</tbody>
