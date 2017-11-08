@@ -21,15 +21,31 @@ class PurchasesController extends Controller
      */
     public function index()
     {
-        $purchases = DB::table('purchases as pu')
-            ->join('providers as pr','pu.provider_id','=','pr.id')
-            ->join('purchase_details as pd','pu.id','=','pd.purchase_id')
-            ->select('pu.id', 'pu.date', 'pr.tradename', 'pu.document_type', 'pu.document_serie', 'pu.document_no', 'pu.isActive', DB::raw('sum(pd.quantity * pd.purchase_price) as total'))
-            ->orderBy('pu.id','desc')
-            ->groupBy('pu.id', 'pu.date', 'pr.tradename', 'pu.document_type', 'pu.document_serie', 'pu.document_no', 'pu.isActive')->get();
-            return view('purchases.index', [ "purchases" => $purchases ]);
+        return view('purchases.index');
+            //->select('pu.id', 'pu.date', 'pr.tradename', 'pu.document_type', 'pu.document_serie', 'pu.document_no', 'pu.isActive', DB::raw('sum(pd.quantity * pd.purchase_price) as total'))
+            // ->orderBy('pu.id','desc')
+            // ->groupBy('pu.id', 'pu.date', 'pr.tradename', 'pu.document_type', 'pu.document_serie', 'pu.document_no', 'pu.isActive')->get();
+            // return view('purchases.index', [ "purchases" => $purchases ]);
 
     }
+
+    public function getPurchaseData()
+{
+            $purchases = DB::table('purchases as pu')
+            ->join('providers as pr','pu.provider_id','=','pr.id')
+            ->join('purchase_details as pd','pu.id','=','pd.id')
+            ->select('pu.id', 
+            'pu.date',
+            'pr.tradename',
+            'pu.document_type',
+            'pu.document_serie',
+            'pu.document_no',
+            'pu.isActive'
+        )->get();
+
+        return datatables($purchases)->toJson();
+}
+
 
     /**
      * Show the form for creating a new resource.

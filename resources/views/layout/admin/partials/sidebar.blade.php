@@ -72,8 +72,36 @@
                         <i class="pe-7s-door-lock"></i>
                         <p>Habitaciones</p>
                     </a>
-                </li>
+                  </li>
                 
+                    <li>
+                    <a href="/castegorias">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Castegorias</p>
+                    </a>
+                </li>
+
+                    <li>
+                    <a href="/productos">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Productos</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/proveedores">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Proveedores</p>
+                    </a>
+                </li>
+
+                 <li>
+                    <a href="/compras">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Compras</p>
+                    </a>
+                </li>
+
             </ul>
     	</div>
     </div>
