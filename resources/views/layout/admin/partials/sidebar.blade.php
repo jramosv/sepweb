@@ -75,9 +75,9 @@
                   </li>
                 
                     <li>
-                    <a href="/castegorias">
+                    <a href="/categorias">
                         <i class="pe-7s-bandaid"></i>
-                        <p>Castegorias</p>
+                        <p>Categorias</p>
                     </a>
                 </li>
 

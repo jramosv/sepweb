@@ -148,6 +148,8 @@ Route::delete('/proveedores/{provider}', 'ProvidersController@destroy');
 Route::get('/compras', 'PurchasesController@index');
 Route::get('/compras/crear', 'PurchasesController@create');
 Route::post('/compras', 'PurchasesController@store');
+Route::get('/compras/{id}', 'PurchasesController@edit');
+Route::put('/compras/{purchase}', 'PurchasesController@update');
 Route::delete('/compras/{purchase}', 'PurchasesController@destroy');
 Route::get('/compras_lista', 'PurchasesController@getPurchaseData');
 /**

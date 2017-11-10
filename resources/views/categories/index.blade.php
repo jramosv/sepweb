@@ -18,9 +18,7 @@
 					<td>{{ $category->name }}</td>
 					<td>{{ $category->description }}</td>
 					<td width="120px">
-						<a href="#" class="btn btn-primary btn-xs">
-							<i class="fa fa-user-md" aria-hidden="true"></i>
-						</a>
+						
 						<a href="/categorias/{{ $category->id }}" class="btn btn-warning btn-xs">
 							<i class="fa fa-pencil" aria-hidden="true"></i>
 						</a>
