@@ -132,6 +132,7 @@ Route::get('/productos/{id}', 'ProductsController@edit');
 Route::put('/productos/{product}', 'ProductsController@update');
 Route::delete('/productos/{product}', 'ProductsController@destroy');
 
+
 /**
 *	Rutas para todo lo relacionado con proveedores
 */
@@ -142,24 +143,21 @@ Route::get('/proveedores/{id}', 'ProvidersController@edit');
 Route::put('/proveedores/{provider}', 'ProvidersController@update');
 Route::delete('/proveedores/{provider}', 'ProvidersController@destroy');
 
-/**
-*	Rutas para todo lo relacionado con compras
-*/
+//	Rutas para todo lo relacionado con compras
+
 Route::get('/compras', 'PurchasesController@index');
 Route::get('/compras/crear', 'PurchasesController@create');
 Route::post('/compras', 'PurchasesController@store');
-Route::get('/compras/{id}', 'PurchasesController@edit');
-Route::put('/compras/{purchase}', 'PurchasesController@update');
+Route::get('/compras/{purchase}', 'PurchasesController@show');
 Route::delete('/compras/{purchase}', 'PurchasesController@destroy');
-Route::get('/compras_lista', 'PurchasesController@getPurchaseData');
-/**
-*	Rutas para todo lo relacionado con farmacia/recetas
-*/
+
+//Rutas para todo lo relacionado con farmacia/recetas
+
 Route::get('/recetas', 'RecipesController@index');
 Route::get('/recetas/crear', 'RecipesController@create');
 Route::post('/recetas', 'RecipesController@store');
+Route::get('/recetas/{recipe}', 'RecipesController@show');
 Route::delete('/recetas/{recipe}', 'RecipesController@destroy');
-
 
 // Route::put('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@update');
 // Route::delete('/diagnosticos/{medical_diagnostic}', 'MedicalDiagnosticsController@destroy');
