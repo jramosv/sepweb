@@ -21,6 +21,7 @@
                         <p>Inicio</p>
                     </a>
                 </li>
+                @if (auth()->user()->admin or auth()->user()->doctor or auth()->user()->secre )
                 <li>
                     <a href="/pacientes">
                         <i class="pe-7s-user"></i>
@@ -39,13 +40,62 @@
                         <p>Hospitalizaciones</p>
                     </a>
                 </li>
+                
+                @endif
+                @if (auth()->user()->admin or auth()->user()->doctor)
+
                 <li>
                     <a href="/diagnosticos">
                         <i class="pe-7s-note2"></i>
                         <p>Diagnosticos</p>
                     </a>
                 </li>
+                @endif
 
+                 @if (auth()->user()->admin or auth()->user()->doctor  or auth()->user()->farm)
+                    <li>
+                        <a href="/productos">
+                            <i class="pe-7s-bandaid"></i>
+                            <p>Productos</p>
+                        </a>
+                    </li>
+
+                 @endif
+
+                  @if (auth()->user()->admin or auth()->user()->farm)
+
+                    <li>
+                    <a href="/castegorias">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Castegorias</p>
+                    </a>
+                </li>
+
+                    
+
+                <li>
+                    <a href="/proveedores">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Proveedores</p>
+                    </a>
+                </li>
+
+                 <li>
+                    <a href="/compras">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Compras</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/ventas">
+                        <i class="pe-7s-bandaid"></i>
+                        <p>Ventas</p>
+                    </a>
+                </li>
+                @endif
+
+                 @if (auth()->user()->admin)
                 <li>
                     <a href="/especialidades">
                         <i class="pe-7s-albums"></i>
@@ -73,34 +123,8 @@
                         <p>Habitaciones</p>
                     </a>
                   </li>
-                
-                    <li>
-                    <a href="/castegorias">
-                        <i class="pe-7s-bandaid"></i>
-                        <p>Castegorias</p>
-                    </a>
-                </li>
-
-                    <li>
-                    <a href="/productos">
-                        <i class="pe-7s-bandaid"></i>
-                        <p>Productos</p>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/proveedores">
-                        <i class="pe-7s-bandaid"></i>
-                        <p>Proveedores</p>
-                    </a>
-                </li>
-
-                 <li>
-                    <a href="/compras">
-                        <i class="pe-7s-bandaid"></i>
-                        <p>Compras</p>
-                    </a>
-                </li>
+                @endif
+                  
 
             </ul>
     	</div>

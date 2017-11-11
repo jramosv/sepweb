@@ -28,8 +28,8 @@ class PatientsTableSeeder extends Seeder
             // $patient->email = $faker->unique()->email;
             // $tipos->random(1)->pacientes()->save($patient);
 
-            $patient->first_name = 'Jose ' . $i;
-            $patient->last_name = 'Cantandola ' . $i;
+            $patient->first_name = 'Nombre ' . $i;
+            $patient->last_name = 'Apellido ' . $i;
             $patient->address = 'Direccion ' . $i;
             $patient->phone = 10000000 + $i;
             $patient->date_birth = '1992-12-12';
