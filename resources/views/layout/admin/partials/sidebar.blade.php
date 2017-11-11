@@ -21,7 +21,7 @@
                         <p>Inicio</p>
                     </a>
                 </li>
-                @if (auth()->user()->admin or auth()->user()->doctor or auth()->user()->secre )
+                @if (auth()->user()->admin or auth()->user()->doctor or auth()->user()->secre )                      
                 <li>
                     <a href="/pacientes">
                         <i class="pe-7s-user"></i>
@@ -65,9 +65,9 @@
                   @if (auth()->user()->admin or auth()->user()->farm)
 
                     <li>
-                    <a href="/castegorias">
+                    <a href="/categorias">
                         <i class="pe-7s-bandaid"></i>
-                        <p>Castegorias</p>
+                        <p>Categorias</p>
                     </a>
                 </li>
 
@@ -88,7 +88,7 @@
                 </li>
 
                 <li>
-                    <a href="/ventas">
+                    <a href="/recetas">
                         <i class="pe-7s-bandaid"></i>
                         <p>Ventas</p>
                     </a>

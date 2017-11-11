@@ -40,7 +40,8 @@
 
 		<div class="form-group {{ $errors->has('symptom') ? 'has-error' : '' }}">
 			<label for="symptom">Sintomas</label>
-			<input type="text" name="symptom" class="form-control" value="{{ old('symptom') }}" placeholder="Sintomas" autofocus />
+			
+			<textarea name="symptom" class="form-control" placeholder="Sintomas">{{ old('symptom') }}</textarea>
 			@if( $errors->has('symptom'))
 				<span class="help-block">
 					<strong>{{ $errors->first('symptom') }}</strong>
@@ -50,7 +51,7 @@
 
 		<div class="form-group {{ $errors->has('diagnosis') ? 'has-error' : '' }}">
 			<label for="diagnosis">Diagnostico</label>
-			<input type="text" name="diagnosis" class="form-control" value="{{ old('diagnosis') }}" placeholder="Diagnostico" />
+			<textarea name="diagnosis" class="form-control" placeholder="Diagnostico">{{ old('diagnosis') }}</textarea>
 			@if( $errors->has('diagnosis'))
 				<span class="help-block">
 					<strong>{{ $errors->first('diagnosis') }}</strong>
@@ -60,7 +61,7 @@
 
 		<div class="form-group {{ $errors->has('treatment') ? 'has-error' : '' }}">
 			<label for="treatment">Tratamiento</label>
-			<input type="text" name="treatment" class="form-control" value="{{ old('treatment') }}" placeholder="Tratamiento" />
+			<textarea name="treatment" class="form-control" placeholder="Tratamiento">{{ old('treatment') }}</textarea>
 			@if( $errors->has('phone'))
 				<span class="help-block">
 					<strong>{{ $errors->first('treatment') }}</strong>

@@ -151,6 +151,7 @@ Route::post('/compras', 'PurchasesController@store');
 Route::get('/compras/{purchase}', 'PurchasesController@show');
 Route::delete('/compras/{purchase}', 'PurchasesController@destroy');
 
+
 //Rutas para todo lo relacionado con farmacia/recetas
 
 Route::get('/recetas', 'RecipesController@index');
