@@ -26,11 +26,12 @@ class SaleFormRequest extends FormRequest
         return [
         'patient_id' => 'required',
         'document_type' => 'required',
-        'document_serie' => 'required',
         'document_no' => 'required',
         'date' => 'required',
+        'product_id' => 'required',
+        'quantity' => 'required',
+        'sale_price' => 'required',
         'total' => 'required',
-        'isActive' => 'required',
     ];
     }
 }
