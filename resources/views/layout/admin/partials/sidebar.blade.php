@@ -21,7 +21,7 @@
                         <p>Inicio</p>
                     </a>
                 </li>
-                @if (auth()->user()->admin or auth()->user()->doctor or auth()->user()->secre )
+                @if (auth()->user()->admin or auth()->user()->doctor or auth()->user()->secre )                      
                 <li>
                     <a href="/pacientes">
                         <i class="pe-7s-user"></i>

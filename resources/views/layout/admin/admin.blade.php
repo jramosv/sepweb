@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>SEPWEB | @yield('titulo', 'Clinica del Niño')</title>
+	<title>SIPWEB | @yield('titulo', 'Clinica del Niño')</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -133,7 +133,14 @@
 
     </div> 
 
-
+<style>footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }</style>
+<footer class="container-fluid">
+  <p align=right>Hecho con <3   por   José Villeda, Kevin Fajardo, Karen Gonzales, Eddy Hernández</p>
+</footer>
 </body>
 
     <!--   Core JS Files   -->
@@ -167,5 +174,6 @@
 	<script src="{{ asset('/js/demo.js') }}"></script>
 
 	@yield('script')
+
 
 </html>
