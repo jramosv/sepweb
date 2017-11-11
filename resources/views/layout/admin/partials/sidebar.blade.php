@@ -10,7 +10,7 @@
     	<div class="sidebar-wrapper" > 
             <div class="logo">
                 <a href="http://sepweb.dev" class="simple-text">
-                    SEPWEB
+                    SIPWEB
                 </a>
             </div>
 
@@ -66,7 +66,7 @@
 
                     <li>
                     <a href="/categorias">
-                        <i class="pe-7s-bandaid"></i>
+                        <i class="pe-7s-edit"></i>
                         <p>Categorias</p>
                     </a>
                 </li>
@@ -75,21 +75,21 @@
 
                 <li>
                     <a href="/proveedores">
-                        <i class="pe-7s-bandaid"></i>
+                        <i class="pe-7s-credit"></i>
                         <p>Proveedores</p>
                     </a>
                 </li>
 
                  <li>
                     <a href="/compras">
-                        <i class="pe-7s-bandaid"></i>
+                        <i class="pe-7s-cart"></i>
                         <p>Compras</p>
                     </a>
                 </li>
 
                 <li>
                     <a href="/recetas">
-                        <i class="pe-7s-bandaid"></i>
+                        <i class="pe-7s-drawer"></i>
                         <p>Receta</p>
                     </a>
                 </li>
@@ -105,14 +105,14 @@
 
                 <li>
                     <a href="/enfermeras">
-                        <i class="pe-7s-bandaid"></i>
+                        <i class="pe-7s-like"></i>
                         <p>Enfermeras</p>
                     </a>
                 </li>
 
                 <li>
                     <a href="/doctores">
-                        <i class="pe-7s-bandaid"></i>
+                        <i class="pe-7s-users"></i>
                         <p>Doctores</p>
                     </a>
                 </li>
